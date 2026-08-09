@@ -93,6 +93,25 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 #notes{background:var(--blush)}.notes-box{background:#fff;border-left:6px solid var(--gold);border-radius:var(--radius-sm);box-shadow:var(--shadow);padding:28px 30px}.notes-box ul{margin:0;padding-left:20px}.notes-box li{margin-bottom:10px}.notes-box strong{color:var(--berry)}
 .mini-cta{background:linear-gradient(135deg,var(--berry),var(--wine));color:#fff;border-radius:var(--radius);padding:34px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:var(--shadow);margin-top:28px}.mini-cta h3{color:#fff;font-size:clamp(25px,4vw,38px)}.mini-cta p{margin:6px 0 0;color:#f8dfe7}
 
+
+/* bridal, events & hospitality */
+#hospitality{background:linear-gradient(180deg,#fff,var(--blush-soft))}
+.hospitality-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hospitality-card{position:relative;min-height:290px;border-radius:var(--radius);overflow:hidden;box-shadow:0 16px 38px rgba(92,14,46,.13);isolation:isolate}
+.hospitality-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s ease}
+.hospitality-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,7,22,.05) 18%,rgba(43,7,22,.88) 100%);z-index:-1}
+.hospitality-card:hover img{transform:scale(1.05)}
+.hospitality-card-content{position:absolute;left:0;right:0;bottom:0;padding:22px;color:#fff}
+.hospitality-card h3{color:#fff;font-size:23px;margin-bottom:7px}
+.hospitality-card p{margin:0 0 14px;color:rgba(255,255,255,.82);font-size:13.5px}
+.hospitality-card .btn{background:rgba(255,255,255,.94);color:var(--wine)}
+.hospitality-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:end;margin-bottom:34px}
+.hospitality-side{background:var(--wine);color:#fff;border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow)}
+.hospitality-side strong{display:block;color:var(--gold);font-family:var(--display);font-size:22px;margin-bottom:6px}
+.hospitality-side p{margin:0;color:rgba(255,255,255,.8);font-size:14px}
+@media(max-width:900px){.hospitality-grid{grid-template-columns:repeat(2,1fr)}.hospitality-intro{grid-template-columns:1fr}}
+@media(max-width:620px){.hospitality-grid{grid-template-columns:1fr}.hospitality-card{min-height:250px}}
+
 /* contact */
 #contact{background:#fff}.contact-grid{display:grid;grid-template-columns:1fr minmax(270px,350px);gap:40px}.contact-list{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:14px}.contact-list li{display:flex;gap:13px;align-items:flex-start;background:var(--blush-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:15px 17px}.contact-list .icon{width:38px;height:38px;border-radius:50%;background:var(--berry);color:#fff;display:grid;place-items:center;flex:none}.contact-list strong{display:block;color:var(--wine);font-size:14px}.contact-list span{color:var(--muted);font-size:14px}.map-card{background:var(--wine);color:#fff;border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;box-shadow:var(--shadow)}.map-card h3{color:#fff}.map-card p{color:rgba(255,255,255,.78);margin:0}
 
@@ -146,7 +165,7 @@ body.modal-open{overflow:hidden}
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#training">Training</a><a href="#contact">Contact</a>
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#training">Training</a><a href="#hospitality">Bridal &amp; Hospitality</a><a href="#contact">Contact</a>
       <button class="btn btn-whatsapp btn-sm open-booking" type="button">Book Now</button>
     </div>
   </nav>
@@ -158,7 +177,7 @@ body.modal-open{overflow:hidden}
     <div>
       <p class="hero-tagline">Your Beauty is Our First Priority</p>
       <h1 class="hero-title">Levinah Unisex<br>Salon &amp; Makeup Studio</h1>
-      <p class="hero-sub">Hair, makeup, bridal, nails, barbering and beauty services for the whole family in Bunamwaya, Sseguku, Wakiso District — plus professional training for the next generation of stylists.</p>
+      <p class="hero-sub">Beauty, hair, makeup, bridal, nails and barbering in Bunamwaya, Sseguku — plus professional training and selected bridal, event and hospitality services across Uganda.</p>
       <ul class="hero-pills"><li>Beauty</li><li>Hair</li><li>Makeup</li><li>Nails</li><li>Barbering</li></ul>
       <div class="hero-actions">
         <button class="btn btn-whatsapp open-booking" type="button">Book Now</button>
@@ -178,7 +197,7 @@ body.modal-open{overflow:hidden}
       <h2>A unisex studio built on care and craft</h2>
       <p>Levinah Unisex Salon &amp; Makeup Studio is a full-service beauty destination in Bunamwaya, Sseguku, Wakiso District, welcoming women, men and kids for hair, makeup, nails, barbering and bridal styling.</p>
       <p>Every service is delivered by professional experts using quality products in a clean, relaxing environment — and every price is built to stay affordable without cutting corners.</p>
-      <p>Beyond the chair, Levinah also runs certified training programs for people who want to build a career in beauty, hairdressing, makeup and more.</p>
+      <p>Beyond the chair, Levinah also offers professional training and has incorporated bridal, event and hospitality services into the wider Levinah experience.</p>
       <div class="hero-actions"><a href="#services" class="btn btn-primary">Explore Services</a><a href="#training" class="btn btn-outline">Training Programs</a></div>
     </div>
     <div class="about-panel reveal">
@@ -252,6 +271,41 @@ body.modal-open{overflow:hidden}
   </div>
 </section>
 
+
+<section id="hospitality">
+  <div class="wrap">
+    <div class="hospitality-intro">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <p class="eyebrow">Beyond the Salon</p>
+        <h2>Bridal, Events &amp; Hospitality</h2>
+        <p>Levinah brings beauty and hospitality together for clients who want a more complete experience — from bridal preparation to transport, catering, social receptions and honeymoon support.</p>
+      </div>
+      <div class="hospitality-side reveal">
+        <strong>Available across Uganda</strong>
+        <p>For bridal bookings and selected hospitality services, Levinah can support clients beyond the salon and coordinate experiences for events in different parts of the country.</p>
+      </div>
+    </div>
+    <div class="hospitality-grid reveal">
+      <article class="hospitality-card">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=82" alt="Bridal and wedding support">
+        <div class="hospitality-card-content"><h3>Bridal &amp; Wedding Support</h3><p>Beauty preparation, bridal styling and coordinated support around your wedding experience.</p><button class="btn btn-sm hospitality-enquiry" data-service="Bridal & Wedding Support" type="button">Enquire</button></div>
+      </article>
+      <article class="hospitality-card">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=82" alt="Catering and reception setup">
+        <div class="hospitality-card-content"><h3>Catering &amp; Receptions</h3><p>Catering support for social lunches, dinner receptions and selected celebrations.</p><button class="btn btn-sm hospitality-enquiry" data-service="Catering & Reception Services" type="button">Enquire</button></div>
+      </article>
+      <article class="hospitality-card">
+        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=82" alt="Transportation support">
+        <div class="hospitality-card-content"><h3>Transportation</h3><p>Transport coordination for bridal and event-related needs, depending on the booking.</p><button class="btn btn-sm hospitality-enquiry" data-service="Transportation Services" type="button">Enquire</button></div>
+      </article>
+      <article class="hospitality-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=82" alt="Honeymoon travel experience">
+        <div class="hospitality-card-content"><h3>Wedding &amp; Honeymoon Packages</h3><p>Enquiry-based wedding and honeymoon support tailored around the couple's plans and destination.</p><button class="btn btn-sm hospitality-enquiry" data-service="Wedding & Honeymoon Packages" type="button">Enquire</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="notes">
   <div class="wrap">
     <div class="section-head reveal"><p class="eyebrow">Good to Know</p><h2>Important Notes</h2></div>
@@ -297,7 +351,7 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="footer-grid">
       <div><div class="footer-brand"><img src="assets/images/levinah_unisex_logo.png" alt="Levinah logo"><strong>Levinah Unisex Salon &amp; Makeup Studio</strong></div><p style="font-size:14px;max-width:340px;">Your Beauty is Our First Priority. Beauty, hair, makeup, nails and barbering services in Bunamwaya, Sseguku, Wakiso District.</p></div>
-      <div><h5>Quick Links</h5><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#training">Training</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Quick Links</h5><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#training">Training</a></li><li><a href="#hospitality">Bridal &amp; Hospitality</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h5>Contact</h5><ul><li>Bunamwaya, Sseguku, Wakiso District</li><li>WhatsApp: 0703 878 921</li><li>Call: 0787 444 791</li><li>Levinah Unisex Salon and Makeup Studio</li></ul></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Levinah Unisex Salon &amp; Makeup Studio. All rights reserved.</span><span>Site by <a class="solomantalgo-link" href="https://solomantalgo.com" target="_blank" rel="noopener">Solomantalgo</a></span></div>
@@ -513,6 +567,12 @@ var trainingOption=document.createElement("option");
 trainingOption.value="Professional Training";
 trainingOption.textContent="Professional Training / Course Enquiry";
 bookingService.appendChild(trainingOption);
+["Bridal & Wedding Support","Catering & Reception Services","Transportation Services","Wedding & Honeymoon Packages"].forEach(function(name){
+  var option=document.createElement("option");
+  option.value=name;
+  option.textContent=name;
+  bookingService.appendChild(option);
+});
 
 function openBooking(serviceName){
   bookingService.value=serviceName||"";
@@ -538,7 +598,9 @@ document.addEventListener("click",function(e){
   var serviceBtn=e.target.closest(".service-book");
   if(serviceBtn){openBooking(serviceBtn.dataset.service||"");return}
   var trainingBtn=e.target.closest(".training-enquiry");
-  if(trainingBtn){openBooking("Professional Training")}
+  if(trainingBtn){openBooking("Professional Training");return}
+  var hospitalityBtn=e.target.closest(".hospitality-enquiry");
+  if(hospitalityBtn){openBooking(hospitalityBtn.dataset.service||"")}
 });
 
 bookingForm.addEventListener("submit",function(e){
@@ -549,12 +611,13 @@ bookingForm.addEventListener("submit",function(e){
   var note=document.getElementById("bookingNote").value.trim();
   if(!name||!phone||!service)return;
   var selected=SERVICES.find(function(s){return s.name===service});
-  var price=selected?selected.price:(service==="Professional Training"?"Contact Levinah for course details":"Please confirm");
+  var enquiryOnly=["Professional Training","Bridal & Wedding Support","Catering & Reception Services","Transportation Services","Wedding & Honeymoon Packages"].indexOf(service)!==-1;
+  var price=selected?selected.price:(enquiryOnly?"Contact Levinah for details":"Please confirm");
   var message="Hi Levinah! I'd like to make a booking request.\n\n"+
     "Name: "+name+"\n"+
     "Phone: "+phone+"\n"+
     "Service: "+service+"\n"+
-    (service==="Professional Training"?"Course details: "+price:"Listed price: UGX "+price)+
+    (enquiryOnly?"Details: "+price:"Listed price: UGX "+price)+
     (note?"\nNote: "+note:"")+
     "\n\nPlease let me know the available times.";
   window.open(waLink(message),"_blank","noopener");
