@@ -287,19 +287,23 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="hospitality-grid reveal">
       <article class="hospitality-card">
-        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=82" alt="Bridal and wedding support">
+        <img src="assets/images/Bridal_Wedding.png" alt="Bridal and wedding support">
         <div class="hospitality-card-content"><h3>Bridal &amp; Wedding Support</h3><p>Beauty preparation, bridal styling and coordinated support around your wedding experience.</p><button class="btn btn-sm hospitality-enquiry" data-service="Bridal & Wedding Support" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
-        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=82" alt="Catering and reception setup">
-        <div class="hospitality-card-content"><h3>Catering &amp; Receptions</h3><p>Catering support for social lunches, dinner receptions and selected celebrations.</p><button class="btn btn-sm hospitality-enquiry" data-service="Catering & Reception Services" type="button">Enquire</button></div>
+        <img src="assets/images/Catering.png" alt="Catering and reception setup">
+        <div class="hospitality-card-content"><h3>Catering</h3><p>Professional catering support for weddings, celebrations and selected private or social events.</p><button class="btn btn-sm hospitality-enquiry" data-service="Catering Services" type="button">Enquire</button></div>
+      </article>
+      <article class="hospitality-card">
+        <img src="assets/images/Social_Receptions.png" alt="Elegant social lunch and dinner reception">
+        <div class="hospitality-card-content"><h3>Social Lunches &amp; Dinner Receptions</h3><p>Thoughtfully arranged social lunches, dinner receptions and hospitality experiences for special gatherings.</p><button class="btn btn-sm hospitality-enquiry" data-service="Social Lunches & Dinner Receptions" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
         <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=82" alt="Transportation support">
         <div class="hospitality-card-content"><h3>Transportation</h3><p>Transport coordination for bridal and event-related needs, depending on the booking.</p><button class="btn btn-sm hospitality-enquiry" data-service="Transportation Services" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=82" alt="Honeymoon travel experience">
+        <img src="assets/images/Honeymoon.png" alt="Honeymoon travel experience">
         <div class="hospitality-card-content"><h3>Wedding &amp; Honeymoon Packages</h3><p>Enquiry-based wedding and honeymoon support tailored around the couple's plans and destination.</p><button class="btn btn-sm hospitality-enquiry" data-service="Wedding & Honeymoon Packages" type="button">Enquire</button></div>
       </article>
     </div>
@@ -567,7 +571,7 @@ var trainingOption=document.createElement("option");
 trainingOption.value="Professional Training";
 trainingOption.textContent="Professional Training / Course Enquiry";
 bookingService.appendChild(trainingOption);
-["Bridal & Wedding Support","Catering & Reception Services","Transportation Services","Wedding & Honeymoon Packages"].forEach(function(name){
+["Bridal & Wedding Support","Catering Services","Social Lunches & Dinner Receptions","Transportation Services","Wedding & Honeymoon Packages"].forEach(function(name){
   var option=document.createElement("option");
   option.value=name;
   option.textContent=name;
@@ -611,7 +615,7 @@ bookingForm.addEventListener("submit",function(e){
   var note=document.getElementById("bookingNote").value.trim();
   if(!name||!phone||!service)return;
   var selected=SERVICES.find(function(s){return s.name===service});
-  var enquiryOnly=["Professional Training","Bridal & Wedding Support","Catering & Reception Services","Transportation Services","Wedding & Honeymoon Packages"].indexOf(service)!==-1;
+  var enquiryOnly=["Professional Training","Bridal & Wedding Support","Catering Services","Social Lunches & Dinner Receptions","Transportation Services","Wedding & Honeymoon Packages"].indexOf(service)!==-1;
   var price=selected?selected.price:(enquiryOnly?"Contact Levinah for details":"Please confirm");
   var message="Hi Levinah! I'd like to make a booking request.\n\n"+
     "Name: "+name+"\n"+
