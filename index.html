@@ -69,7 +69,24 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 .hero-copy{position:relative;text-shadow:0 2px 16px rgba(0,0,0,.72)}
 .hero-copy:before{content:"";position:absolute;left:-18px;top:-24px;width:64px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--gold),transparent)}
 .logo-panel{backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.7)}
-@media(max-width:760px){.hero-bg{object-position:center center}.logo-panel{max-width:150px;opacity:.94}}
+
+@media(max-width:760px){
+  .hero-bg{object-position:center center}
+  .hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.03) 0%,
+      rgba(0,0,0,.08) 45%,
+      rgba(0,0,0,.18) 100%
+    );
+  }
+  .logo-panel{max-width:150px;opacity:.94}
+}
+
 
 /* highlights */
 #highlights{padding:0}.highlights-grid{display:grid;grid-template-columns:repeat(5,1fr);background:var(--wine)}.highlights-grid div{padding:18px 12px;text-align:center;color:#fff;font-size:13px;font-weight:800;border-right:1px solid rgba(255,255,255,.12)}
