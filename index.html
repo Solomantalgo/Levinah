@@ -12,6 +12,7 @@
 <meta property="og:image" content="assets/images/levinah_unisex_logo.png" />
 <meta name="theme-color" content="#5C0E2E" />
 <link rel="icon" href="assets/images/levinah_unisex_logo.png" type="image/png" />
+<link rel="preload" as="image" href="assets/images/hero.png" fetchpriority="high" />
 <link rel="preload" as="image" href="assets/images/levinah_unisex_logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,14 +56,20 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 
 /* hero */
 .hero{min-height:100svh;display:grid;align-items:center;position:relative;isolation:isolate;color:#fff;background:var(--wine);overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=86") center/cover}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(43,5,22,.96) 0%,rgba(92,14,46,.84) 46%,rgba(92,14,46,.28) 100%)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-3;filter:saturate(1.04) contrast(1.03);transform:scale(1.01)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(28,3,14,.94) 0%,rgba(60,9,31,.78) 44%,rgba(60,9,31,.22) 76%,rgba(0,0,0,.08) 100%),linear-gradient(180deg,rgba(0,0,0,.10),rgba(43,5,22,.20))}
 .hero-inner{width:min(1180px,calc(100% - 40px));margin:auto;padding:126px 0 78px;display:grid;grid-template-columns:minmax(0,680px) minmax(190px,260px);gap:62px;align-items:center}
 .hero-tagline{font-family:var(--display);font-style:italic;color:var(--gold);font-size:clamp(20px,2.4vw,27px);margin:0 0 12px}
 .hero-title{color:#fff;font-size:clamp(45px,7vw,82px);letter-spacing:-.03em}.hero-sub{max-width:590px;color:#ffeef3;font-size:clamp(16px,1.7vw,19px);margin:20px 0 25px}
 .hero-pills{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:0 0 28px}.hero-pills li{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);padding:8px 13px;border-radius:999px;font-size:12px;font-weight:800;backdrop-filter:blur(8px)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero .btn-outline{color:#fff;border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.08)}
 .logo-panel{background:rgba(255,255,255,.95);border-radius:var(--radius);padding:18px;box-shadow:0 24px 60px rgba(0,0,0,.28)}.logo-panel img{width:100%;height:auto}
+
+
+.hero-copy{position:relative}
+.hero-copy:before{content:"";position:absolute;left:-18px;top:-24px;width:64px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--gold),transparent)}
+.logo-panel{backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.7)}
+@media(max-width:760px){.hero-bg{object-position:center center}.hero:after{background:linear-gradient(180deg,rgba(28,3,14,.70) 0%,rgba(60,9,31,.78) 54%,rgba(28,3,14,.90) 100%)}}
 
 /* highlights */
 #highlights{padding:0}.highlights-grid{display:grid;grid-template-columns:repeat(5,1fr);background:var(--wine)}.highlights-grid div{padding:18px 12px;text-align:center;color:#fff;font-size:13px;font-weight:800;border-right:1px solid rgba(255,255,255,.12)}
@@ -161,6 +168,9 @@ footer{background:#2b0716;color:rgba(255,255,255,.82);padding:48px 0 24px}.foote
 body.modal-open{overflow:hidden}
 @media(max-width:560px){.booking-modal{padding:12px}.booking-head{padding:24px 20px 16px}.booking-form{padding:20px}.form-row{grid-template-columns:1fr}}
 
+@supports(content-visibility:auto){
+#about,#services,#gallery,#training,#hospitality,#notes,#contact{content-visibility:auto;contain-intrinsic-size:900px}
+}
 </style>
 </head>
 <body>
@@ -181,8 +191,9 @@ body.modal-open{overflow:hidden}
 
 <main>
 <section class="hero" id="home">
+  <img class="hero-bg" src="assets/images/hero.png" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async">
   <div class="hero-inner">
-    <div>
+    <div class="hero-copy">
       <p class="hero-tagline">Your Beauty is Our Priority</p>
       <h1 class="hero-title">Levinah Unisex<br>Salon &amp; Makeup Studio</h1>
       <p class="hero-sub">Beauty, hair, makeup, bridal, nails and barbering in Bunamwaya, Sseguku — plus professional training and selected bridal, event and hospitality services across Uganda.</p>
@@ -225,13 +236,13 @@ body.modal-open{overflow:hidden}
     </div>
 
     <div class="service-showcase reveal">
-      <button class="service-visual" data-cat="ladies-hair"><img src="assets/images/Hair_and_braiding3.png" alt="Hair styling and braiding"><span><small>Explore</small>Hair &amp; Braiding</span></button>
-      <button class="service-visual" data-cat="makeup"><img src="assets/images/Makeup3.png" alt="Professional makeup"><span><small>Explore</small>Makeup &amp; Glam</span></button>
-      <button class="service-visual" data-cat="bridal"><img src="assets/images/Bridal3.png" alt="Bridal styling"><span><small>Explore</small>Bridal Packages</span></button>
-      <button class="service-visual" data-cat="nails"><img src="assets/images/Nails3.png" alt="Nail services"><span><small>Explore</small>Nails</span></button>
-      <button class="service-visual" data-cat="barber"><img src="assets/images/Babering3.png" alt="Barbering services"><span><small>Explore</small>Barbering</span></button>
-      <button class="service-visual" data-cat="kids"><img src="assets/images/Kids3.png" alt="Kids hair styling"><span><small>Explore</small>Kids Services</span></button>
-      <button class="service-visual" data-cat="beauty"><img src="assets/images/Beauty3.png" alt="Beauty and facial treatment"><span><small>Explore</small>Beauty Services</span></button>
+      <button class="service-visual" data-cat="ladies-hair"><img src="assets/images/Hair_and_braiding3.png" alt="Hair styling and braiding" loading="lazy" decoding="async"><span><small>Explore</small>Hair &amp; Braiding</span></button>
+      <button class="service-visual" data-cat="makeup"><img src="assets/images/Makeup3.png" alt="Professional makeup" loading="lazy" decoding="async"><span><small>Explore</small>Makeup &amp; Glam</span></button>
+      <button class="service-visual" data-cat="bridal"><img src="assets/images/Bridal3.png" alt="Bridal styling" loading="lazy" decoding="async"><span><small>Explore</small>Bridal Packages</span></button>
+      <button class="service-visual" data-cat="nails"><img src="assets/images/Nails3.png" alt="Nail services" loading="lazy" decoding="async"><span><small>Explore</small>Nails</span></button>
+      <button class="service-visual" data-cat="barber"><img src="assets/images/Babering3.png" alt="Barbering services" loading="lazy" decoding="async"><span><small>Explore</small>Barbering</span></button>
+      <button class="service-visual" data-cat="kids"><img src="assets/images/Kids3.png" alt="Kids hair styling" loading="lazy" decoding="async"><span><small>Explore</small>Kids Services</span></button>
+      <button class="service-visual" data-cat="beauty"><img src="assets/images/Beauty3.png" alt="Beauty and facial treatment" loading="lazy" decoding="async"><span><small>Explore</small>Beauty Services</span></button>
     </div>
 
     <div class="cat-tabs" id="catTabs"></div>
@@ -253,10 +264,10 @@ body.modal-open{overflow:hidden}
       <p>A glimpse of the beauty, style and atmosphere you can expect at Levinah.</p>
     </div>
     <div class="gallery-grid reveal">
-      <figure class="gallery-item"><img src="assets/images/Ladies.png" alt="Ladies hair and beauty styling"><figcaption>Ladies Styling</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup finish"><figcaption>Makeup</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Nails3.png" alt="Nail care and styling"><figcaption>Nails</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Barbering2.png" alt="Professional barbering"><figcaption>Barbering</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Ladies.png" alt="Ladies hair and beauty styling" loading="lazy" decoding="async"><figcaption>Ladies Styling</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup finish" loading="lazy" decoding="async"><figcaption>Makeup</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Nails3.png" alt="Nail care and styling" loading="lazy" decoding="async"><figcaption>Nails</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Barbering2.png" alt="Professional barbering" loading="lazy" decoding="async"><figcaption>Barbering</figcaption></figure>
     </div>
     <p class="gallery-note">Beauty, confidence and care — all in one place.</p>
   </div>
@@ -269,7 +280,7 @@ body.modal-open{overflow:hidden}
       <p>Certified training available — practical skills for a better future. Learn directly from Levinah's professional team.</p>
     </div>
     <div class="training-layout reveal">
-      <div class="training-photo"><img src="assets/images/Training.png" alt="Professional beauty training at Levinah"></div>
+      <div class="training-photo"><img src="assets/images/Training.png" alt="Professional beauty training at Levinah" loading="lazy" decoding="async"></div>
       <div class="training-content">
         <div class="training-grid" id="trainingGrid"></div>
         <p class="training-note">“Certified Training Available — Practical Skills, Better Future”</p>
@@ -295,23 +306,23 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="hospitality-grid reveal">
       <article class="hospitality-card">
-        <img src="assets/images/Bridal_Wedding.png" alt="Bridal and wedding support">
+        <img src="assets/images/Bridal_Wedding.png" alt="Bridal and wedding support" loading="lazy" decoding="async">
         <div class="hospitality-card-content"><h3>Bridal &amp; Wedding Support</h3><p>Beauty preparation, bridal styling and coordinated support around your wedding experience.</p><button class="btn btn-sm hospitality-enquiry" data-service="Bridal & Wedding Support" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
-        <img src="assets/images/Catering.png" alt="Catering and reception setup">
+        <img src="assets/images/Catering.png" alt="Catering and reception setup" loading="lazy" decoding="async">
         <div class="hospitality-card-content"><h3>Catering</h3><p>Professional catering support for weddings, celebrations and selected private or social events.</p><button class="btn btn-sm hospitality-enquiry" data-service="Catering Services" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
-        <img src="assets/images/Social_Receptions.png" alt="Elegant social lunch and dinner reception">
+        <img src="assets/images/Social_Receptions.png" alt="Elegant social lunch and dinner reception" loading="lazy" decoding="async">
         <div class="hospitality-card-content"><h3>Social Lunches &amp; Dinner Receptions</h3><p>Thoughtfully arranged social lunches, dinner receptions and hospitality experiences for special gatherings.</p><button class="btn btn-sm hospitality-enquiry" data-service="Social Lunches & Dinner Receptions" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
-        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=82" alt="Transportation support">
+        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=82" alt="Transportation support" loading="lazy" decoding="async">
         <div class="hospitality-card-content"><h3>Transportation</h3><p>Transport coordination for bridal and event-related needs, depending on the booking.</p><button class="btn btn-sm hospitality-enquiry" data-service="Transportation Services" type="button">Enquire</button></div>
       </article>
       <article class="hospitality-card">
-        <img src="assets/images/Honeymoon.png" alt="Honeymoon travel experience">
+        <img src="assets/images/Honeymoon.png" alt="Honeymoon travel experience" loading="lazy" decoding="async">
         <div class="hospitality-card-content"><h3>Wedding &amp; Honeymoon Packages</h3><p>Enquiry-based wedding and honeymoon support tailored around the couple's plans and destination.</p><button class="btn btn-sm hospitality-enquiry" data-service="Wedding & Honeymoon Packages" type="button">Enquire</button></div>
       </article>
     </div>
