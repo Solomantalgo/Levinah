@@ -118,8 +118,8 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 
 .location-video-card{margin-top:28px;background:var(--blush-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 .location-video-card h3{font-size:24px;margin-bottom:6px}.location-video-card p{margin:0 0 14px;color:var(--muted);font-size:14px}
-.location-video-frame{border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/9}
-.location-video-frame video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+.location-video-frame{border-radius:14px;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center;max-height:680px}
+.location-video-frame video{width:100%;height:auto;max-height:680px;display:block;object-fit:contain;background:#111}
 
 /* footer */
 footer{background:#2b0716;color:rgba(255,255,255,.82);padding:48px 0 24px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:45px;height:45px;border-radius:50%;background:#fff;padding:3px}.footer-brand strong{font-family:var(--display);color:#fff;font-size:19px}footer h5{color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 13px}footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:13.5px}footer a{text-decoration:none}.solomantalgo-link{color:inherit;text-decoration:none;font-weight:700}.solomantalgo-link:hover{color:var(--gold)}.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:12px;color:rgba(255,255,255,.58);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -223,13 +223,13 @@ body.modal-open{overflow:hidden}
     </div>
 
     <div class="service-showcase reveal">
-      <button class="service-visual" data-cat="ladies-hair"><img src="assets/images/Hair_and_braiding.png" alt="Hair styling and braiding"><span><small>Explore</small>Hair &amp; Braiding</span></button>
-      <button class="service-visual" data-cat="makeup"><img src="assets/images/Makeup.png" alt="Professional makeup"><span><small>Explore</small>Makeup &amp; Glam</span></button>
-      <button class="service-visual" data-cat="bridal"><img src="assets/images/Bridal.png" alt="Bridal styling"><span><small>Explore</small>Bridal Packages</span></button>
-      <button class="service-visual" data-cat="nails"><img src="assets/images/Nails.png" alt="Nail services"><span><small>Explore</small>Nails</span></button>
-      <button class="service-visual" data-cat="barber"><img src="assets/images/Barbering.png" alt="Barbering services"><span><small>Explore</small>Barbering</span></button>
-      <button class="service-visual" data-cat="kids"><img src="assets/images/Kids.png" alt="Kids hair styling"><span><small>Explore</small>Kids Services</span></button>
-      <button class="service-visual" data-cat="beauty"><img src="assets/images/Ladies2.png" alt="Beauty and facial treatment"><span><small>Explore</small>Beauty Services</span></button>
+      <button class="service-visual" data-cat="ladies-hair"><img src="assets/images/Hair_and_braiding3.png" alt="Hair styling and braiding"><span><small>Explore</small>Hair &amp; Braiding</span></button>
+      <button class="service-visual" data-cat="makeup"><img src="assets/images/Makeup3.png" alt="Professional makeup"><span><small>Explore</small>Makeup &amp; Glam</span></button>
+      <button class="service-visual" data-cat="bridal"><img src="assets/images/Bridal3.png" alt="Bridal styling"><span><small>Explore</small>Bridal Packages</span></button>
+      <button class="service-visual" data-cat="nails"><img src="assets/images/Nails3.png" alt="Nail services"><span><small>Explore</small>Nails</span></button>
+      <button class="service-visual" data-cat="barber"><img src="assets/images/Babering3.png" alt="Barbering services"><span><small>Explore</small>Barbering</span></button>
+      <button class="service-visual" data-cat="kids"><img src="assets/images/Kids3.png" alt="Kids hair styling"><span><small>Explore</small>Kids Services</span></button>
+      <button class="service-visual" data-cat="beauty"><img src="assets/images/Beauty3.png" alt="Beauty and facial treatment"><span><small>Explore</small>Beauty Services</span></button>
     </div>
 
     <div class="cat-tabs" id="catTabs"></div>
@@ -252,8 +252,8 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="gallery-grid reveal">
       <figure class="gallery-item"><img src="assets/images/Ladies.png" alt="Ladies hair and beauty styling"><figcaption>Ladies Styling</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Makeup.png" alt="Professional makeup finish"><figcaption>Makeup</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Nails.png" alt="Nail care and styling"><figcaption>Nails</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup finish"><figcaption>Makeup</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Nails3.png" alt="Nail care and styling"><figcaption>Nails</figcaption></figure>
       <figure class="gallery-item"><img src="assets/images/Barbering2.png" alt="Professional barbering"><figcaption>Barbering</figcaption></figure>
     </div>
     <p class="gallery-note">Beauty, confidence and care — all in one place.</p>
@@ -350,8 +350,15 @@ body.modal-open{overflow:hidden}
       </div>
       <div>
         <div class="map-card reveal">
-          <h3>Find Us</h3><p>Levinah Unisex Salon and Makeup Studio<br>Bunamwaya, Sseguku<br>Wakiso District, Uganda</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Bunamwaya%2C%20Sseguku%2C%20Wakiso%20District" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Open in Google Maps</a>
+          <h3>Find Us</h3>
+          <p><strong>Harambe Plaza, 1st Floor</strong><br>Along Kabusu–Bunamwaya–Lweza / Entebbe Road<br>Bunamwaya Town, Uganda</p>
+          <p style="margin-top:10px"><strong>Landmark:</strong> Opposite God's Grace Plaza</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Harambe%20Plaza%20Bunamwaya%20Uganda" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Open in Google Maps</a>
+          <a href="tel:+256787444791" class="btn btn-outline btn-sm" style="margin-left:6px">Call for Directions</a>
+          <div class="opening-hours" style="margin-top:22px">
+            <h4 style="margin-bottom:10px">Opening Hours</h4>
+            <p><strong>Mon, Thu &amp; Fri:</strong> 8:00 AM – 10:30 PM<br><strong>Tue &amp; Wed:</strong> 8:30 AM – 10:30 PM<br><strong>Sat &amp; Sun:</strong> 7:00 AM – 10:30 PM<br><strong>Public Holidays:</strong> 7:00 AM – 10:30 PM</p>
+          </div>
         </div>
         <div class="location-video-card reveal">
           <h3>How to Find Levinah</h3>
