@@ -289,6 +289,96 @@ body.modal-open{overflow:hidden}
   }
 }
 
+
+@media(max-width:760px){
+  .hero-bg{
+    height:50vh;
+    min-height:380px;
+    max-height:500px;
+  }
+
+  .hero:after{
+    height:50vh;
+    min-height:380px;
+    max-height:500px;
+  }
+
+  .hero-inner{
+    padding:calc(50vh - 28px) 16px 30px;
+  }
+
+  .hero-copy{
+    padding:22px 18px 20px;
+    border-radius:20px;
+    max-width:100%;
+    margin:0 auto;
+  }
+
+  .hero-copy:before{
+    left:18px;
+    top:12px;
+    width:42px;
+  }
+
+  .hero-tagline{
+    font-size:17px;
+    line-height:1.2;
+    margin:4px 0 10px;
+  }
+
+  .hero-title{
+    font-size:clamp(34px,9.5vw,43px);
+    line-height:1.02;
+    letter-spacing:-.025em;
+    max-width:100%;
+  }
+
+  .hero-sub{
+    font-size:14.5px;
+    line-height:1.55;
+    margin:14px 0 16px;
+  }
+
+  .hero-pills{
+    gap:6px;
+    margin-bottom:16px;
+  }
+
+  .hero-pills li{
+    padding:6px 10px;
+    font-size:10.5px;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+    min-height:42px;
+    padding:10px 12px;
+    font-size:12px;
+  }
+
+  /* Keep the floating quick-action button away from the main hero copy */
+  .action-fab{
+    bottom:18px;
+    right:16px;
+  }
+}
+
+@media(max-width:390px){
+  .hero-title{
+    font-size:33px;
+  }
+
+  .hero-actions{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 <body>
