@@ -529,6 +529,95 @@ body.modal-open{overflow:hidden}
   .hero-actions{grid-template-columns:1fr}
 }
 
+
+@media(max-width:760px){
+  .hero-bg{
+    height:43vh;
+    min-height:330px;
+    max-height:440px;
+  }
+
+  .hero:after{
+    height:43vh;
+    min-height:330px;
+    max-height:440px;
+  }
+
+  .hero-inner{
+    padding:calc(43vh - 62px) 0 0;
+  }
+
+  .hero-copy{
+    padding:34px 22px 26px;
+    background-position:center 38%;
+  }
+
+  .hero-copy:after{
+    top:-58px;
+    height:92px;
+  }
+
+  .hero-copy:before{
+    top:18px;
+  }
+
+  .hero-tagline{
+    margin-top:0;
+    margin-bottom:8px;
+    font-size:17px;
+  }
+
+  .hero-title{
+    font-size:clamp(34px,9.7vw,44px);
+    line-height:.98;
+  }
+
+  .hero-sub{
+    margin:14px 0 15px;
+    font-size:14.5px;
+    line-height:1.52;
+  }
+
+  .hero-pills{
+    margin-bottom:15px;
+    gap:6px;
+  }
+
+  .hero-pills li{
+    padding:6px 10px;
+    font-size:10.5px;
+  }
+
+  .hero-actions{
+    gap:8px;
+  }
+
+  .hero-actions .btn{
+    min-height:43px;
+    padding:10px 11px;
+    font-size:12px;
+  }
+}
+
+@media(max-width:390px){
+  .hero-bg,.hero:after{
+    height:41vh;
+    min-height:315px;
+  }
+
+  .hero-inner{
+    padding:calc(41vh - 58px) 0 0;
+  }
+
+  .hero-copy{
+    padding:32px 18px 24px;
+  }
+
+  .hero-title{
+    font-size:33px;
+  }
+}
+
 </style>
 </head>
 <body>
