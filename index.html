@@ -162,8 +162,130 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 .additional-list{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}.additional-list li{background:var(--blush-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;font-weight:700;font-size:14px;color:var(--wine)}.additional-list li:before{content:"✦";color:var(--gold);margin-right:8px}
 
 /* gallery */
-#gallery{background:linear-gradient(180deg,var(--blush-soft),#fff)}.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:250px 250px;gap:13px}.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);margin:0;box-shadow:0 12px 30px rgba(92,14,46,.1)}.gallery-item:first-child{grid-row:1/3}.gallery-item:nth-child(4){grid-column:auto}.gallery-item:nth-child(5){grid-column:2/4}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.55s}.gallery-item:hover img{transform:scale(1.05)}.gallery-item figcaption{position:absolute;left:14px;bottom:14px;background:rgba(92,14,46,.86);color:#fff;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:800;backdrop-filter:blur(8px)}
+#gallery{background:linear-gradient(180deg,var(--blush-soft),#fff)}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:13px}.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);margin:0;box-shadow:0 12px 30px rgba(92,14,46,.1)}.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}.gallery-item:nth-child(5){grid-column:span 2}.gallery-item:nth-child(8){grid-column:span 2}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.55s}.gallery-item:hover img{transform:scale(1.05)}.gallery-item figcaption{position:absolute;left:14px;bottom:14px;background:rgba(92,14,46,.86);color:#fff;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:800;backdrop-filter:blur(8px)}
 .gallery-note{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+
+
+@media(max-width:700px){
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:170px;
+    gap:10px;
+  }
+  .gallery-item,
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(8){
+    grid-column:auto;
+    grid-row:auto;
+  }
+  .gallery-item:first-child{
+    grid-column:1/3;
+    grid-row:auto;
+    min-height:220px;
+  }
+  .gallery-item figcaption{
+    left:10px;
+    bottom:10px;
+    padding:7px 10px;
+    font-size:11px;
+  }
+}
+
+
+/* gallery lightbox */
+.gallery-item{cursor:zoom-in}
+.gallery-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:120;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(15,5,10,.94);
+  padding:20px;
+}
+.gallery-lightbox.open{display:flex}
+.gallery-lightbox-inner{
+  position:relative;
+  width:min(980px,100%);
+  max-height:92vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.gallery-lightbox img{
+  max-width:100%;
+  max-height:78vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:16px;
+  box-shadow:0 24px 80px rgba(0,0,0,.45);
+}
+.gallery-lightbox-caption{
+  color:#fff;
+  margin-top:12px;
+  font-weight:800;
+  text-align:center;
+}
+.gallery-lightbox-count{
+  color:rgba(255,255,255,.7);
+  font-size:12px;
+  margin-top:4px;
+}
+.gallery-lightbox-close,
+.gallery-lightbox-nav{
+  position:absolute;
+  border:0;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  backdrop-filter:blur(8px);
+}
+.gallery-lightbox-close{
+  width:42px;
+  height:42px;
+  top:-8px;
+  right:-8px;
+  font-size:28px;
+  line-height:1;
+}
+.gallery-lightbox-nav{
+  width:48px;
+  height:48px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:30px;
+}
+.gallery-lightbox-prev{left:-64px}
+.gallery-lightbox-next{right:-64px}
+.gallery-lightbox-close:hover,
+.gallery-lightbox-nav:hover{background:rgba(244,196,48,.22)}
+body.lightbox-open{overflow:hidden}
+@media(max-width:760px){
+  .gallery-lightbox{padding:12px}
+  .gallery-lightbox img{max-height:74vh;border-radius:12px}
+  .gallery-lightbox-close{
+    top:8px;
+    right:8px;
+    z-index:2;
+    background:rgba(0,0,0,.45);
+  }
+  .gallery-lightbox-nav{
+    width:42px;
+    height:42px;
+    top:auto;
+    bottom:58px;
+    transform:none;
+    background:rgba(0,0,0,.45);
+  }
+  .gallery-lightbox-prev{left:18px}
+  .gallery-lightbox-next{right:18px}
+}
 
 /* training */
 #training{background:var(--wine);color:#fff}.training-head h2,#training .section-head p{color:#fff}#training .section-head p{color:rgba(255,255,255,.76)}#training .eyebrow{color:var(--gold)}
@@ -784,14 +906,29 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="gallery-grid reveal">
       <figure class="gallery-item"><img src="assets/images/salon-interior.jpg" alt="Inside Levinah salon" loading="lazy" decoding="async"><figcaption>Inside Levinah</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/salon-products.jpg" alt="Beauty and nail products at Levinah" loading="lazy" decoding="async"><figcaption>Quality Products</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/salon-logo-wall.jpg" alt="Levinah illuminated salon wall sign" loading="lazy" decoding="async"><figcaption>Our Brand</figcaption></figure>
       <figure class="gallery-item"><img src="assets/images/salon-reception.jpg" alt="Levinah reception area" loading="lazy" decoding="async"><figcaption>Reception</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/salon-products.jpg" alt="Beauty and nail products at Levinah" loading="lazy" decoding="async"><figcaption>Quality Products</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/salon-logo-wall.jpg" alt="Levinah illuminated wall sign" loading="lazy" decoding="async"><figcaption>Levinah Brand</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/salon-signboard.jpg" alt="Levinah salon signboard" loading="lazy" decoding="async"><figcaption>Our Salon</figcaption></figure>
       <figure class="gallery-item"><img src="assets/images/Bridal3.png" alt="Levinah bridal beauty service" loading="lazy" decoding="async"><figcaption>Bridal Beauty</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup service at Levinah" loading="lazy" decoding="async"><figcaption>Makeup</figcaption></figure>
+      <figure class="gallery-item"><img src="assets/images/Hair_and_braiding3.png" alt="Hair braiding service at Levinah" loading="lazy" decoding="async"><figcaption>Hair &amp; Braiding</figcaption></figure>
     </div>
     <p class="gallery-note">Beauty, confidence and care — all in one place.</p>
   </div>
 </section>
+
+
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+  <div class="gallery-lightbox-inner">
+    <button class="gallery-lightbox-close" id="galleryLightboxClose" type="button" aria-label="Close gallery">×</button>
+    <button class="gallery-lightbox-nav gallery-lightbox-prev" id="galleryLightboxPrev" type="button" aria-label="Previous image">‹</button>
+    <img id="galleryLightboxImage" src="" alt="">
+    <div class="gallery-lightbox-caption" id="galleryLightboxCaption"></div>
+    <div class="gallery-lightbox-count" id="galleryLightboxCount"></div>
+    <button class="gallery-lightbox-nav gallery-lightbox-next" id="galleryLightboxNext" type="button" aria-label="Next image">›</button>
+  </div>
+</div>
 
 <section id="training">
   <div class="wrap">
@@ -1206,6 +1343,67 @@ if(locationVideo){
     this.load();
   });
 }
+
+/* gallery lightbox + swipe */
+var galleryItems=Array.from(document.querySelectorAll(".gallery-item"));
+var galleryLightbox=document.getElementById("galleryLightbox");
+var galleryLightboxImage=document.getElementById("galleryLightboxImage");
+var galleryLightboxCaption=document.getElementById("galleryLightboxCaption");
+var galleryLightboxCount=document.getElementById("galleryLightboxCount");
+var galleryLightboxClose=document.getElementById("galleryLightboxClose");
+var galleryLightboxPrev=document.getElementById("galleryLightboxPrev");
+var galleryLightboxNext=document.getElementById("galleryLightboxNext");
+var galleryIndex=0;
+var galleryTouchStartX=0;
+
+function showGalleryImage(index){
+  if(!galleryItems.length)return;
+  galleryIndex=(index+galleryItems.length)%galleryItems.length;
+  var item=galleryItems[galleryIndex];
+  var img=item.querySelector("img");
+  var caption=item.querySelector("figcaption");
+  galleryLightboxImage.src=img.src;
+  galleryLightboxImage.alt=img.alt||"Levinah gallery image";
+  galleryLightboxCaption.textContent=caption?caption.textContent:"";
+  galleryLightboxCount.textContent=(galleryIndex+1)+" / "+galleryItems.length;
+}
+function openGallery(index){
+  showGalleryImage(index);
+  galleryLightbox.classList.add("open");
+  galleryLightbox.setAttribute("aria-hidden","false");
+  document.body.classList.add("lightbox-open");
+}
+function closeGallery(){
+  galleryLightbox.classList.remove("open");
+  galleryLightbox.setAttribute("aria-hidden","true");
+  document.body.classList.remove("lightbox-open");
+}
+galleryItems.forEach(function(item,index){
+  item.setAttribute("tabindex","0");
+  item.setAttribute("role","button");
+  item.setAttribute("aria-label","Open "+(item.querySelector("figcaption")?item.querySelector("figcaption").textContent:"gallery image"));
+  item.addEventListener("click",function(){openGallery(index)});
+  item.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openGallery(index)}});
+});
+galleryLightboxClose.addEventListener("click",closeGallery);
+galleryLightboxPrev.addEventListener("click",function(){showGalleryImage(galleryIndex-1)});
+galleryLightboxNext.addEventListener("click",function(){showGalleryImage(galleryIndex+1)});
+galleryLightbox.addEventListener("click",function(e){if(e.target===galleryLightbox)closeGallery()});
+document.addEventListener("keydown",function(e){
+  if(!galleryLightbox.classList.contains("open"))return;
+  if(e.key==="Escape")closeGallery();
+  if(e.key==="ArrowLeft")showGalleryImage(galleryIndex-1);
+  if(e.key==="ArrowRight")showGalleryImage(galleryIndex+1);
+});
+galleryLightbox.addEventListener("touchstart",function(e){
+  galleryTouchStartX=e.changedTouches[0].clientX;
+},{passive:true});
+galleryLightbox.addEventListener("touchend",function(e){
+  var dx=e.changedTouches[0].clientX-galleryTouchStartX;
+  if(Math.abs(dx)<45)return;
+  if(dx<0)showGalleryImage(galleryIndex+1);
+  else showGalleryImage(galleryIndex-1);
+},{passive:true});
 </script>
 </body>
 </html>
