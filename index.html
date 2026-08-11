@@ -290,6 +290,51 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 }
 
 
+
+/* split gallery: service carousel + real salon grid */
+.gallery-block{margin-top:28px}
+.gallery-subhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:13px}
+.gallery-subhead h3{margin:0;font-family:var(--display);color:var(--wine);font-size:24px}
+.gallery-subhead p{margin:3px 0 0;color:var(--muted);font-size:12.5px}
+.service-gallery-track{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(270px,34vw);
+  gap:13px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  overscroll-behavior-inline:contain;
+  padding:2px 2px 13px;
+  scrollbar-width:thin;
+}
+.service-gallery-track .gallery-item{scroll-snap-align:start;aspect-ratio:16/10}
+.salon-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.salon-gallery-grid .gallery-item{aspect-ratio:1/1}
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  margin:0;
+  box-shadow:0 12px 30px rgba(92,14,46,.1);
+  cursor:zoom-in;
+  background:#eee;
+}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.gallery-item:hover img{transform:scale(1.035)}
+.gallery-item figcaption{
+  position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);
+  padding:8px 11px;border-radius:999px;background:rgba(45,7,24,.74);
+  color:#fff;backdrop-filter:blur(6px);font-size:11px;font-weight:800;
+  border:1px solid rgba(255,255,255,.12)
+}
+.gallery-note{color:var(--muted);font-size:12px;margin:18px 0 0}
+@media(max-width:760px){
+  .service-gallery-track{grid-auto-columns:82vw;gap:10px}
+  .salon-gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .salon-gallery-grid .gallery-item:first-child{grid-column:1/3;aspect-ratio:16/10}
+}
+@media(max-width:420px){.service-gallery-track{grid-auto-columns:86vw}}
+
 /* gallery lightbox */
 .gallery-item{cursor:zoom-in}
 .gallery-lightbox{
@@ -1037,20 +1082,46 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Gallery</p>
-      <h2>A taste of the Levinah experience</h2>
-      <p>A glimpse of the beauty, style and atmosphere you can expect at Levinah.</p>
+      <h2>The Levinah experience</h2>
+      <p>Explore our services, then take a look inside the real Levinah salon.</p>
     </div>
-    <div class="gallery-grid reveal">
-      <figure class="gallery-item"><img src="assets/images/salon-interior.jpg" alt="Inside Levinah salon" loading="lazy" decoding="async"><figcaption>Inside Levinah</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/salon-reception.jpg" alt="Levinah reception area" loading="lazy" decoding="async"><figcaption>Reception</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/salon-products.jpg" alt="Beauty and nail products at Levinah" loading="lazy" decoding="async"><figcaption>Quality Products</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/salon-logo-wall.jpg" alt="Levinah illuminated wall sign" loading="lazy" decoding="async"><figcaption>Levinah Brand</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/salon-signboard.jpg" alt="Levinah salon signboard" loading="lazy" decoding="async"><figcaption>Our Salon</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Bridal3.png" alt="Levinah bridal beauty service" loading="lazy" decoding="async"><figcaption>Bridal Beauty</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup service at Levinah" loading="lazy" decoding="async"><figcaption>Makeup</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/images/Hair_and_braiding3.png" alt="Hair braiding service at Levinah" loading="lazy" decoding="async"><figcaption>Hair &amp; Braiding</figcaption></figure>
+
+    <div class="gallery-block reveal">
+      <div class="gallery-subhead">
+        <div>
+          <h3>Services in Focus</h3>
+          <p>Swipe sideways to explore some of our beauty and grooming services.</p>
+        </div>
+      </div>
+      <div class="service-gallery-track" aria-label="Levinah service gallery">
+        <figure class="gallery-item"><img src="assets/images/Hair_and_braiding3.png" alt="Hair styling and braiding at Levinah" loading="lazy" decoding="async"><figcaption>Hair &amp; Braiding</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup at Levinah" loading="lazy" decoding="async"><figcaption>Makeup &amp; Glam</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/Bridal3.png" alt="Bridal beauty at Levinah" loading="lazy" decoding="async"><figcaption>Bridal Beauty</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/Nails3.png" alt="Nail services at Levinah" loading="lazy" decoding="async"><figcaption>Nails</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/Babering3.png" alt="Barbering services at Levinah" loading="lazy" decoding="async"><figcaption>Barbering</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/Kids3.png" alt="Kids hair services at Levinah" loading="lazy" decoding="async"><figcaption>Kids Services</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/Beauty3.png" alt="Beauty and facial services at Levinah" loading="lazy" decoding="async"><figcaption>Beauty Services</figcaption></figure>
+      </div>
     </div>
-    <p class="gallery-note">Beauty, confidence and care — all in one place.</p>
+
+    <div class="gallery-block reveal">
+      <div class="gallery-subhead">
+        <div>
+          <h3>Inside Levinah</h3>
+          <p>Real views of our salon, reception, products and storefront.</p>
+        </div>
+      </div>
+      <div class="salon-gallery-grid" aria-label="Levinah salon photos">
+        <figure class="gallery-item"><img src="assets/images/hero.png" alt="Levinah salon exterior" loading="lazy" decoding="async"><figcaption>Levinah Exterior</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/salon-reception.jpg" alt="Levinah salon reception area" loading="lazy" decoding="async"><figcaption>Reception</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/salon-interior.jpg" alt="Inside Levinah salon" loading="lazy" decoding="async"><figcaption>Salon Interior</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/salon-products.jpg" alt="Beauty and nail products at Levinah" loading="lazy" decoding="async"><figcaption>Products</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/salon-logo-wall.jpg" alt="Levinah illuminated wall logo" loading="lazy" decoding="async"><figcaption>Levinah Brand</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/salon-signboard.jpg" alt="Levinah salon signboard" loading="lazy" decoding="async"><figcaption>Find Levinah</figcaption></figure>
+      </div>
+    </div>
+
+    <p class="gallery-note">Tap any image to open the full-screen viewer. Service photos swipe sideways; salon photos stay visible in the grid.</p>
   </div>
 </section>
 
@@ -1497,7 +1568,7 @@ if(locationVideo){
 }
 
 /* gallery lightbox + swipe */
-var galleryItems=Array.from(document.querySelectorAll(".gallery-item"));
+var galleryItems=Array.from(document.querySelectorAll("#gallery .gallery-item"));
 var galleryLightbox=document.getElementById("galleryLightbox");
 var galleryLightboxImage=document.getElementById("galleryLightboxImage");
 var galleryLightboxCaption=document.getElementById("galleryLightboxCaption");
