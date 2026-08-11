@@ -173,8 +173,8 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 .about-photo-panel img{
   width:100%;
   height:auto;
-  aspect-ratio:3/2;
-  object-fit:cover;
+  aspect-ratio:auto;
+  object-fit:contain;
   object-position:center center;
 }
 .about-photo-badge{
@@ -225,7 +225,7 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
   margin-top:3px;
 }
 @media(max-width:700px){
-  .about-photo-panel img{aspect-ratio:3/2}
+  .about-photo-panel img{height:auto;aspect-ratio:auto;object-fit:contain}
   .location-proof img{aspect-ratio:16/9}
 }
 
