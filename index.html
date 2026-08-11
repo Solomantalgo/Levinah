@@ -152,55 +152,144 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 
 
 .about-side-stack{display:grid;gap:16px}
-.brand-payment-card{
-  background:#fff;
+.brand-payment-card img{width:70px;height:70px}
+}
+
+
+.brand-trust-card{
+  background:linear-gradient(135deg,#fff 0%,#fff7fa 100%);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:20px;
+  box-shadow:0 14px 34px rgba(92,14,46,.10);
+  overflow:hidden;
+}
+.brand-trust-top{
   display:grid;
-  grid-template-columns:88px 1fr;
+  grid-template-columns:92px 1fr;
   gap:16px;
   align-items:center;
-  box-shadow:0 12px 30px rgba(92,14,46,.09);
+  padding:20px;
 }
-.brand-payment-card img{
-  width:88px;
-  height:88px;
+.brand-trust-top img{
+  width:92px;
+  height:92px;
   object-fit:contain;
   border-radius:50%;
   background:#fff;
   padding:4px;
-  box-shadow:0 6px 18px rgba(92,14,46,.12);
+  box-shadow:0 7px 20px rgba(92,14,46,.12);
 }
-.brand-payment-card strong{
+.brand-trust-title strong{
   display:block;
-  color:var(--wine);
   font-family:var(--display);
-  font-size:20px;
-  line-height:1.1;
+  color:var(--wine);
+  font-size:22px;
+  line-height:1.08;
 }
-.brand-payment-card p{
-  margin:5px 0 10px;
+.brand-trust-title span{
+  display:block;
   color:var(--muted);
   font-size:12.5px;
+  margin-top:4px;
 }
-.payment-pills{
+.brand-trust-services{
+  margin-top:9px;
+  font-size:11.5px;
+  font-weight:800;
+  color:var(--berry);
+  letter-spacing:.01em;
+}
+.brand-trust-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:0 20px 18px;
+}
+.trust-info{
   display:flex;
-  flex-wrap:wrap;
-  gap:7px;
+  gap:10px;
+  align-items:flex-start;
+  padding:12px 13px;
+  border-radius:13px;
+  background:#fff;
+  border:1px solid var(--line);
 }
-.payment-pills span{
+.trust-info .ti{
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;
+  flex:0 0 auto;
   background:var(--blush-soft);
   color:var(--wine);
+  font-weight:900;
+  font-size:12px;
+}
+.trust-info strong{
+  display:block;
+  color:var(--ink);
+  font-size:12px;
+}
+.trust-info a,.trust-info span{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:11.5px;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+}
+.trust-info a:hover{color:var(--berry)}
+.brand-socials{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:0 20px 18px;
+}
+.brand-social-link{
+  text-decoration:none;
   border:1px solid var(--line);
+  background:#fff;
+  color:var(--wine);
+  border-radius:999px;
+  padding:8px 11px;
+  font-size:11px;
+  font-weight:800;
+  transition:.2s;
+}
+.brand-social-link:hover{
+  transform:translateY(-1px);
+  border-color:rgba(158,27,79,.35);
+  color:var(--berry);
+}
+.brand-payment-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  padding:13px 20px;
+  background:var(--wine);
+  color:#fff;
+}
+.brand-payment-strip strong{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--gold);
+  margin-right:2px;
+}
+.brand-payment-strip span{
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
   border-radius:999px;
   padding:6px 9px;
   font-size:10.5px;
   font-weight:800;
 }
-@media(max-width:520px){
-  .brand-payment-card{grid-template-columns:70px 1fr;padding:16px}
-  .brand-payment-card img{width:70px;height:70px}
+@media(max-width:560px){
+  .brand-trust-top{grid-template-columns:72px 1fr;padding:16px}
+  .brand-trust-top img{width:72px;height:72px}
+  .brand-trust-title strong{font-size:19px}
+  .brand-trust-body{grid-template-columns:1fr;padding:0 16px 16px}
+  .brand-socials{padding:0 16px 16px}
+  .brand-payment-strip{padding:12px 16px}
 }
 
 /* visual services */
@@ -979,14 +1068,43 @@ body.modal-open{overflow:hidden}
           <span>A real look inside our Bunamwaya salon.</span>
         </div>
       </div>
-      <div class="brand-payment-card">
-        <img src="assets/images/levinah_unisex_logo.png" alt="Levinah Unisex Salon logo" loading="lazy" decoding="async">
-        <div>
-          <strong>Levinah Unisex Salon</strong>
-          <p>Flexible ways to pay for your visit.</p>
-          <div class="payment-pills">
-            <span>Cash</span><span>Mobile Money</span><span>Bank Transfer</span>
+      <div class="brand-trust-card">
+        <div class="brand-trust-top">
+          <img src="assets/images/levinah_unisex_logo.png" alt="Levinah Unisex Salon logo" loading="lazy" decoding="async">
+          <div class="brand-trust-title">
+            <strong>Levinah Unisex Salon &amp; Makeup Studio</strong>
+            <span>Bunamwaya, Sseguku · Wakiso District</span>
+            <div class="brand-trust-services">Beauty · Hair · Makeup · Nails · Barbering</div>
           </div>
+        </div>
+
+        <div class="brand-trust-body">
+          <div class="trust-info">
+            <span class="ti">WA</span>
+            <div><strong>WhatsApp</strong><a href="https://wa.me/256703878921" target="_blank" rel="noopener">0703 878 921</a></div>
+          </div>
+          <div class="trust-info">
+            <span class="ti">☎</span>
+            <div><strong>Call</strong><a href="tel:+256787444791">0787 444 791</a></div>
+          </div>
+          <div class="trust-info">
+            <span class="ti">✉</span>
+            <div><strong>Email</strong><a href="mailto:levinahunisexsalon@gmail.com">levinahunisexsalon@gmail.com</a></div>
+          </div>
+          <div class="trust-info">
+            <span class="ti">⌖</span>
+            <div><strong>Location</strong><a href="https://www.google.com/maps/dir/?api=1&destination=Levinah%20Unisex%20Salon%20%26%20Makeup%20Studio%2C%20Harambe%20Plaza%2C%20Bunamwaya%20Town%2C%20Uganda" target="_blank" rel="noopener">Harambe Plaza, Bunamwaya</a></div>
+          </div>
+        </div>
+
+        <div class="brand-socials">
+          <a class="brand-social-link" href="https://www.tiktok.com/@levinahsalon" target="_blank" rel="noopener">TikTok · @levinahsalon</a>
+          <a class="brand-social-link" href="https://youtube.com/@levinahunisexsalon-u6n?si=2y6HuvCfl8zTKpEK" target="_blank" rel="noopener">YouTube · Levinah Unisex Salon</a>
+        </div>
+
+        <div class="brand-payment-strip">
+          <strong>We Accept</strong>
+          <span>Cash</span><span>Mobile Money</span><span>Bank Transfers</span>
         </div>
       </div>
     </div>
