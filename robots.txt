@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://levinah.vercel.app/sitemap.xml
+Sitemap: https://www.levinahsalons.com/sitemap.xml
