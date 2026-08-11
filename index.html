@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>Levinah Unisex Salon &amp; Makeup Studio | Bunamwaya, Uganda</title>
-<meta name="description" content="Levinah Unisex Salon & Makeup Studio in Bunamwaya, Wakiso offers hair styling, braiding, makeup, bridal beauty, nails, barbering, kids services, facial care and professional beauty training. Book via WhatsApp." />
+<meta name="description" content="Levinah Unisex Salon & Makeup Studio in Bunamwaya, Wakiso offers hair styling, braiding, makeup, bridal beauty, nails, barbering, kids services, facial care, event styling & photoshoots and professional beauty training. Book via WhatsApp." />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="author" content="Levinah Unisex Salon & Makeup Studio" />
 <meta name="theme-color" content="#5C0E2E" />
@@ -24,13 +24,13 @@
 <meta property="og:locale" content="en_UG" />
 <meta property="og:url" content="https://www.levinahsalons.com/" />
 <meta property="og:title" content="Levinah Unisex Salon & Makeup Studio | Bunamwaya" />
-<meta property="og:description" content="Hair, makeup, bridal beauty, nails, barbering, kids services, facial care and professional training at Levinah in Bunamwaya, Wakiso." />
+<meta property="og:description" content="Hair, makeup, bridal beauty, nails, barbering, kids services, facial care, event styling & photoshoots and professional training at Levinah in Bunamwaya, Wakiso." />
 <meta property="og:image" content="https://www.levinahsalons.com/assets/images/hero.png" />
 <meta property="og:image:alt" content="Levinah Unisex Salon & Makeup Studio in Bunamwaya, Uganda" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Levinah Unisex Salon & Makeup Studio | Bunamwaya" />
-<meta name="twitter:description" content="Hair, makeup, bridal beauty, nails, barbering, kids services, facial care and professional training at Levinah." />
+<meta name="twitter:description" content="Hair, makeup, bridal beauty, nails, barbering, kids services, facial care, event styling & photoshoots and professional training at Levinah." />
 <meta name="twitter:image" content="https://www.levinahsalons.com/assets/images/hero.png" />
 
 <!-- Performance -->
@@ -54,7 +54,7 @@
     "https://www.levinahsalons.com/assets/images/salon-reception.jpg",
     "https://www.levinahsalons.com/assets/images/salon-interior.jpg"
   ],
-  "description": "Unisex salon and makeup studio in Bunamwaya offering hair styling, braiding, makeup, bridal beauty, nails, barbering, kids services, facial care and professional beauty training.",
+  "description": "Unisex salon and makeup studio in Bunamwaya offering hair styling, braiding, makeup, bridal beauty, nails, barbering, kids services, facial care, event styling & photoshoots and professional beauty training.",
   "telephone": "+256787444791",
   "email": "levinahunisexsalon@gmail.com",
   "priceRange": "UGX",
@@ -164,38 +164,36 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 
 /* authentic Levinah imagery */
 .about-photo-panel{
-  position:relative;
   border-radius:var(--radius);
   overflow:hidden;
-  min-height:430px;
   box-shadow:var(--shadow);
-  background:#241019;
+  background:#fff;
+  border:1px solid var(--line);
 }
 .about-photo-panel img{
   width:100%;
-  height:100%;
-  min-height:430px;
+  height:auto;
+  aspect-ratio:3/2;
   object-fit:cover;
+  object-position:center center;
 }
 .about-photo-badge{
-  position:absolute;
-  left:18px;
-  right:18px;
-  bottom:18px;
-  background:rgba(92,14,46,.92);
+  position:static;
+  background:var(--wine);
   color:#fff;
-  border:1px solid rgba(244,196,48,.25);
-  border-radius:14px;
-  padding:15px 17px;
-  backdrop-filter:blur(8px);
+  border-top:1px solid rgba(244,196,48,.28);
+  padding:18px 20px 19px;
 }
 .about-photo-badge strong{
   display:block;
   font-family:var(--display);
-  font-size:20px;
+  font-size:22px;
   color:#fff;
+  line-height:1.12;
 }
 .about-photo-badge span{
+  display:block;
+  margin-top:4px;
   font-size:12.5px;
   color:rgba(255,255,255,.82);
 }
@@ -227,7 +225,7 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
   margin-top:3px;
 }
 @media(max-width:700px){
-  .about-photo-panel,.about-photo-panel img{min-height:340px}
+  .about-photo-panel img{aspect-ratio:3/2}
   .location-proof img{aspect-ratio:16/9}
 }
 
@@ -333,6 +331,93 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 .service-visual{position:relative;min-height:230px;border:0;border-radius:var(--radius);overflow:hidden;padding:0;cursor:pointer;text-align:left;background:#ddd;box-shadow:0 10px 28px rgba(92,14,46,.1)}
 .service-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease}.service-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(43,5,22,.82) 100%)}
 .service-visual:hover img{transform:scale(1.05)}.service-visual span{position:absolute;left:18px;right:18px;bottom:16px;z-index:2;color:#fff;font-family:var(--display);font-size:21px;font-weight:700}.service-visual small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+
+
+/* Levinah personal appointment feature */
+#levinah-touch{
+  background:#fff;
+  padding-top:72px;
+  padding-bottom:72px;
+}
+.levinah-feature{
+  display:grid;
+  grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:linear-gradient(135deg,#fff 0%,var(--blush-soft) 100%);
+}
+.levinah-feature-photo{
+  min-height:520px;
+  background:#eee;
+  overflow:hidden;
+}
+.levinah-feature-photo img{
+  width:100%;
+  height:100%;
+  min-height:520px;
+  object-fit:cover;
+  object-position:center 28%;
+}
+.levinah-feature-copy{
+  padding:54px 52px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.levinah-feature-copy:before{
+  content:"";
+  width:54px;
+  height:3px;
+  background:var(--gold);
+  border-radius:999px;
+  margin-bottom:22px;
+}
+.levinah-feature-copy .eyebrow{margin-bottom:10px}
+.levinah-feature-copy h2{
+  font-size:clamp(36px,4.5vw,58px);
+  max-width:620px;
+}
+.levinah-feature-copy>p{
+  color:var(--muted);
+  font-size:16.5px;
+  margin:18px 0 0;
+  max-width:600px;
+}
+.levinah-signature{
+  margin:25px 0 25px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.levinah-signature strong{
+  display:block;
+  font-family:var(--display);
+  font-size:25px;
+  color:var(--wine);
+}
+.levinah-signature span{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:12.5px;
+  font-weight:700;
+}
+.levinah-book-note{
+  display:block;
+  margin-top:10px;
+  color:var(--muted);
+  font-size:11.5px;
+}
+@media(max-width:820px){
+  #levinah-touch{padding:58px 0}
+  .levinah-feature{grid-template-columns:1fr}
+  .levinah-feature-photo{min-height:0;aspect-ratio:4/5}
+  .levinah-feature-photo img{min-height:0;aspect-ratio:4/5;object-position:center top}
+  .levinah-feature-copy{padding:34px 24px 38px}
+  .levinah-feature-copy h2{font-size:clamp(34px,9vw,46px)}
+}
 
 /* services */
 #services{background:#fff}.cat-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 28px}.cat-tab{border:1.5px solid var(--line);background:#fff;color:var(--wine);border-radius:999px;padding:10px 17px;font-weight:800;font-size:13px;cursor:pointer;transition:.2s}.cat-tab.active,.cat-tab:hover{background:var(--berry);border-color:var(--berry);color:#fff}
@@ -1212,7 +1297,7 @@ body.modal-open{overflow:hidden}
       <div class="about-photo-panel">
         <img src="assets/images/salon-reception.jpg" alt="Levinah salon reception desk" loading="lazy" decoding="async">
         <div class="about-photo-badge">
-          <strong>Welcome to Levinah</strong>
+          <strong>Welcome to Levinah Salons</strong>
           <span>A real look inside our Bunamwaya salon.</span>
         </div>
       </div>
@@ -1257,7 +1342,7 @@ body.modal-open{overflow:hidden}
     <div class="section-head reveal">
       <p class="eyebrow">Service Menu</p>
       <h2>Services &amp; Prices</h2>
-      <p>Start with a look, then explore the full service menu and find the style that suits you best.</p>
+      <p>Explore our eight service categories, then open any category to see the available services and prices.</p>
     </div>
 
     <div class="service-showcase reveal">
@@ -1268,6 +1353,7 @@ body.modal-open{overflow:hidden}
       <button class="service-visual" data-cat="barber"><img src="assets/images/Babering3.png" alt="Barbering services" loading="lazy" decoding="async"><span><small>Explore</small>Barbering</span></button>
       <button class="service-visual" data-cat="kids"><img src="assets/images/Kids3.png" alt="Kids hair styling" loading="lazy" decoding="async"><span><small>Explore</small>Kids Services</span></button>
       <button class="service-visual" data-cat="beauty"><img src="assets/images/Beauty3.png" alt="Beauty and facial treatment" loading="lazy" decoding="async"><span><small>Explore</small>Beauty Services</span></button>
+      <button class="service-visual" data-cat="event-glam"><img src="assets/images/event-glam-photoshoot.jpg" alt="Event attire, makeup, headwrap styling and photoshoot at Levinah" loading="lazy" decoding="async"><span><small>Explore</small>Event Glam &amp; Photoshoot</span></button>
     </div>
 
     <div class="cat-tabs" id="catTabs"></div>
@@ -1277,6 +1363,30 @@ body.modal-open{overflow:hidden}
       <h3 style="margin-top:44px;font-size:24px;">Additional Services</h3>
       <p style="color:var(--muted);margin:8px 0 0;">Priced individually — message us on WhatsApp for a quote.</p>
       <ul class="additional-list" id="additionalList"></ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="levinah-touch">
+  <div class="wrap">
+    <div class="levinah-feature reveal">
+      <div class="levinah-feature-photo">
+        <img src="assets/images/levinah-ceo.jpg" alt="Levinah, founder of Levinah Unisex Salon & Makeup Studio" loading="lazy" decoding="async">
+      </div>
+      <div class="levinah-feature-copy">
+        <p class="eyebrow">The Levinah Touch</p>
+        <h2>Book your appointment with Levinah herself</h2>
+        <p>For clients looking for that extra personal touch, you can book an appointment with Levinah herself for a special touch-up and a more personal Levinah experience.</p>
+        <div class="levinah-signature">
+          <strong>Levinah</strong>
+          <span>Founder · Levinah Unisex Salon &amp; Makeup Studio</span>
+        </div>
+        <div>
+          <a class="btn btn-gold" href="https://wa.me/256703878921?text=Hello%20Levinah%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Levinah%20herself%20for%20a%20special%20touch-up." target="_blank" rel="noopener">Book with Levinah</a>
+          <span class="levinah-book-note">Personal appointments are subject to availability.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1304,6 +1414,7 @@ body.modal-open{overflow:hidden}
         <figure class="gallery-item"><img src="assets/images/Babering3.png" alt="Barbering services at Levinah" loading="lazy" decoding="async"><figcaption>Barbering</figcaption></figure>
         <figure class="gallery-item"><img src="assets/images/Kids3.png" alt="Kids hair services at Levinah" loading="lazy" decoding="async"><figcaption>Kids Services</figcaption></figure>
         <figure class="gallery-item"><img src="assets/images/Beauty3.png" alt="Beauty and facial services at Levinah" loading="lazy" decoding="async"><figcaption>Beauty Services</figcaption></figure>
+        <figure class="gallery-item"><img src="assets/images/event-glam-photoshoot.jpg" alt="Event attire, makeup, headwrap and photoshoot package at Levinah" loading="lazy" decoding="async"><figcaption>Event Glam &amp; Photoshoot</figcaption></figure>
       </div></div>
     </div>
 
@@ -1567,7 +1678,7 @@ if("IntersectionObserver" in window){var io=new IntersectionObserver(function(en
 document.getElementById("year").textContent=new Date().getFullYear();
 
 var CATEGORIES=[
-{id:"ladies-hair",label:"Ladies Hair"},{id:"makeup",label:"Makeup"},{id:"bridal",label:"Bridal Packages"},{id:"nails",label:"Nails"},{id:"barber",label:"Barber"},{id:"kids",label:"Kids"},{id:"beauty",label:"Beauty"}
+{id:"ladies-hair",label:"Ladies Hair"},{id:"makeup",label:"Makeup"},{id:"bridal",label:"Bridal Packages"},{id:"nails",label:"Nails"},{id:"barber",label:"Barber"},{id:"kids",label:"Kids"},{id:"beauty",label:"Beauty"},{id:"event-glam",label:"Event Glam & Photoshoot"}
 ];
 
 var SERVICES=[
@@ -1640,7 +1751,8 @@ var SERVICES=[
 {cat:"beauty",name:"Eyelash Installation (Isolated Lashes)",includes:"Individual lash extensions",price:"30,000 – 150,000"},
 {cat:"beauty",name:"Facial Treatment",includes:"Cleansing and treatment",price:"50,000 – 150,000"},
 {cat:"beauty",name:"Facial Scrub",includes:"Deep facial cleansing and exfoliation",price:"30,000"},
-{cat:"beauty",name:"Face Steaming",includes:"Facial steaming and skin preparation",price:"20,000"}
+{cat:"beauty",name:"Face Steaming",includes:"Facial steaming and skin preparation",price:"20,000"},
+{cat:"event-glam",name:"Event Glam & Photoshoot Package",includes:"Attire / event dress, professional makeup, headwrap styling and photoshoot",price:"200,000 – 500,000"}
 ];
 
 var ADDITIONAL_SERVICES=["Bridal Wear Hiring","Cosmetics Sales","Jewelry & Fashion Accessories","Professional Ushering Services","Event Beauty Consultation","Braids & Wigs"];
