@@ -335,6 +335,55 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 }
 @media(max-width:420px){.service-gallery-track{grid-auto-columns:86vw}}
 
+
+/* v25: premium auto-scrolling service carousel */
+.service-gallery-wrap{
+  position:relative;
+  overflow:hidden;
+}
+.service-gallery-wrap::before,
+.service-gallery-wrap::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:13px;
+  width:56px;
+  z-index:3;
+  pointer-events:none;
+}
+.service-gallery-wrap::before{
+  left:0;
+  background:linear-gradient(90deg,var(--cream, #fffaf8) 0%,rgba(255,250,248,.78) 35%,rgba(255,250,248,0) 100%);
+}
+.service-gallery-wrap::after{
+  right:0;
+  background:linear-gradient(270deg,var(--cream, #fffaf8) 0%,rgba(255,250,248,.78) 35%,rgba(255,250,248,0) 100%);
+}
+.service-gallery-track{
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.service-gallery-track::-webkit-scrollbar{display:none}
+.service-gallery-track .gallery-item{
+  transition:transform .45s ease,opacity .45s ease,filter .45s ease;
+}
+.service-gallery-track .gallery-item.is-near-edge{
+  opacity:.82;
+  filter:saturate(.92);
+}
+.service-gallery-track .gallery-item.is-active{
+  transform:scale(1.012);
+}
+@media(max-width:760px){
+  .service-gallery-wrap::before,
+  .service-gallery-wrap::after{width:34px}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-gallery-track{scroll-behavior:auto}
+  .service-gallery-track .gallery-item{transition:none}
+}
+
 /* gallery lightbox */
 .gallery-item{cursor:zoom-in}
 .gallery-lightbox{
@@ -1093,7 +1142,7 @@ body.modal-open{overflow:hidden}
           <p>Swipe sideways to explore some of our beauty and grooming services.</p>
         </div>
       </div>
-      <div class="service-gallery-track" aria-label="Levinah service gallery">
+      <div class="service-gallery-wrap"><div class="service-gallery-track" aria-label="Levinah service gallery">
         <figure class="gallery-item"><img src="assets/images/Hair_and_braiding3.png" alt="Hair styling and braiding at Levinah" loading="lazy" decoding="async"><figcaption>Hair &amp; Braiding</figcaption></figure>
         <figure class="gallery-item"><img src="assets/images/Makeup3.png" alt="Professional makeup at Levinah" loading="lazy" decoding="async"><figcaption>Makeup &amp; Glam</figcaption></figure>
         <figure class="gallery-item"><img src="assets/images/Bridal3.png" alt="Bridal beauty at Levinah" loading="lazy" decoding="async"><figcaption>Bridal Beauty</figcaption></figure>
@@ -1101,7 +1150,7 @@ body.modal-open{overflow:hidden}
         <figure class="gallery-item"><img src="assets/images/Babering3.png" alt="Barbering services at Levinah" loading="lazy" decoding="async"><figcaption>Barbering</figcaption></figure>
         <figure class="gallery-item"><img src="assets/images/Kids3.png" alt="Kids hair services at Levinah" loading="lazy" decoding="async"><figcaption>Kids Services</figcaption></figure>
         <figure class="gallery-item"><img src="assets/images/Beauty3.png" alt="Beauty and facial services at Levinah" loading="lazy" decoding="async"><figcaption>Beauty Services</figcaption></figure>
-      </div>
+      </div></div>
     </div>
 
     <div class="gallery-block reveal">
@@ -1628,5 +1677,88 @@ galleryLightbox.addEventListener("touchend",function(e){
   else showGalleryImage(galleryIndex-1);
 },{passive:true});
 </script>
+
+<script>
+(function(){
+  const track = document.querySelector('.service-gallery-track');
+  if(!track) return;
+
+  const cards = Array.from(track.querySelectorAll('.gallery-item'));
+  if(cards.length < 2) return;
+
+  let index = 0;
+  let timer = null;
+  let resumeTimer = null;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function updateCardStates(){
+    const trackBox = track.getBoundingClientRect();
+    const center = trackBox.left + trackBox.width / 2;
+
+    cards.forEach(card => {
+      const box = card.getBoundingClientRect();
+      const cardCenter = box.left + box.width / 2;
+      const distance = Math.abs(cardCenter - center);
+
+      card.classList.toggle('is-active', distance < box.width * .36);
+      card.classList.toggle('is-near-edge',
+        box.left < trackBox.left + 58 || box.right > trackBox.right - 58
+      );
+    });
+  }
+
+  function goToCard(nextIndex){
+    index = (nextIndex + cards.length) % cards.length;
+    const card = cards[index];
+
+    track.scrollTo({
+      left: card.offsetLeft - track.offsetLeft,
+      behavior: reduceMotion ? 'auto' : 'smooth'
+    });
+
+    window.setTimeout(updateCardStates, reduceMotion ? 0 : 380);
+  }
+
+  function start(){
+    if(reduceMotion) return;
+    stop();
+    timer = window.setInterval(() => {
+      if(document.hidden) return;
+      goToCard(index + 1);
+    }, 3800);
+  }
+
+  function stop(){
+    if(timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function pauseThenResume(){
+    stop();
+    if(resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(start, 6500);
+  }
+
+  track.addEventListener('pointerdown', pauseThenResume, {passive:true});
+  track.addEventListener('touchstart', pauseThenResume, {passive:true});
+  track.addEventListener('wheel', pauseThenResume, {passive:true});
+  track.addEventListener('mouseenter', stop);
+  track.addEventListener('mouseleave', start);
+  track.addEventListener('scroll', () => requestAnimationFrame(updateCardStates), {passive:true});
+
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) stop();
+    else start();
+  });
+
+  window.addEventListener('resize', updateCardStates);
+
+  updateCardStates();
+  start();
+})();
+</script>
+
 </body>
 </html>
