@@ -328,6 +328,10 @@ body.lightbox-open{overflow:hidden}
 /* footer */
 footer{background:#2b0716;color:rgba(255,255,255,.82);padding:48px 0 24px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:45px;height:45px;border-radius:50%;background:#fff;padding:3px}.footer-brand strong{font-family:var(--display);color:#fff;font-size:19px}footer h5{color:var(--gold);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 13px}footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:13.5px}footer a{text-decoration:none}.solomantalgo-link{color:inherit;text-decoration:none;font-weight:700}.solomantalgo-link:hover{color:var(--gold)}.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:12px;color:rgba(255,255,255,.58);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
+
+.footer-grid a{color:inherit;text-decoration:none}
+.footer-grid a:hover{color:var(--gold)}
+
 /* action fab */
 .action-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .fab-tools{display:flex;flex-direction:column;align-items:flex-end;gap:9px;pointer-events:none}
@@ -1011,6 +1015,7 @@ body.modal-open{overflow:hidden}
           <li><span class="icon">⌖</span><div><strong>Location</strong><span>Harambe Plaza, 1st Floor, Bunamwaya Town — opposite God&#39;s Grace Plaza</span></div></li>
           <li><span class="icon">WA</span><div><strong>WhatsApp</strong><span>0703 878 921</span></div></li>
           <li><span class="icon">☎</span><div><strong>Call</strong><span>0787 444 791</span></div></li>
+          <li><span class="icon">✉</span><div><strong>Email</strong><span><a href="mailto:levinahunisexsalon@gmail.com" style="text-decoration:none">levinahunisexsalon@gmail.com</a></span></div></li>
           <li><span class="icon">UGX</span><div><strong>Payment</strong><span>Cash, Mobile Money, Bank Transfers</span></div></li>
         </ul>
         <div class="hero-actions">
@@ -1023,7 +1028,7 @@ body.modal-open{overflow:hidden}
           <h3>Find Us</h3>
           <p><strong>Harambe Plaza, 1st Floor</strong><br>Along Kabusu–Bunamwaya–Lweza / Entebbe Road<br>Bunamwaya Town, Uganda</p>
           <p style="margin-top:10px"><strong>Landmark:</strong> Opposite God's Grace Plaza</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Harambe%20Plaza%20Bunamwaya%20Uganda" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Levinah%20Unisex%20Salon%20%26%20Makeup%20Studio%2C%20Harambe%20Plaza%2C%20Bunamwaya%20Town%2C%20Uganda" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Get Directions</a>
           <a href="tel:+256787444791" class="btn btn-primary btn-sm directions-call" style="margin-left:6px">☎ Call for Directions</a>
           <div class="opening-hours" style="margin-top:22px">
             <h4 style="margin-bottom:10px">Opening Hours</h4>
@@ -1058,7 +1063,15 @@ body.modal-open{overflow:hidden}
     <div class="footer-grid">
       <div><div class="footer-brand"><img src="assets/images/levinah_unisex_logo.png" alt="Levinah logo"><strong>Levinah Unisex Salon &amp; Makeup Studio</strong></div><p style="font-size:14px;max-width:340px;">Your Beauty is Our Priority. Beauty, hair, makeup, nails and barbering at Harambe Plaza, 1st Floor, Bunamwaya Town — opposite God&#39;s Grace Plaza.</p></div>
       <div><h5>Quick Links</h5><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#training">Training</a></li><li><a href="#hospitality">Bridal &amp; Hospitality</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div><h5>Contact</h5><ul><li>Harambe Plaza, 1st Floor, Bunamwaya Town</li><li>Opposite God&#39;s Grace Plaza</li><li>WhatsApp: 0703 878 921</li><li>Call: 0787 444 791</li><li>Levinah Unisex Salon and Makeup Studio</li></ul></div>
+      <div><h5>Contact &amp; Socials</h5><ul>
+        <li>Harambe Plaza, 1st Floor, Bunamwaya Town</li>
+        <li>Opposite God&#39;s Grace Plaza</li>
+        <li><a href="https://wa.me/256703878921" target="_blank" rel="noopener">WhatsApp: 0703 878 921</a></li>
+        <li><a href="tel:+256787444791">Call: 0787 444 791</a></li>
+        <li><a href="mailto:levinahunisexsalon@gmail.com">levinahunisexsalon@gmail.com</a></li>
+        <li><a href="https://www.tiktok.com/@levinahsalon" target="_blank" rel="noopener">TikTok: @levinahsalon</a></li>
+        <li><a href="https://youtube.com/@levinahunisexsalon-u6n?si=2y6HuvCfl8zTKpEK" target="_blank" rel="noopener">YouTube: Levinah Unisex Salon</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Levinah Unisex Salon &amp; Makeup Studio. All rights reserved.</span><span>Site by <a class="solomantalgo-link" href="https://solomantalgo.com" target="_blank" rel="noopener">Solomantalgo</a></span></div>
   </div>
@@ -1111,11 +1124,16 @@ body.modal-open{overflow:hidden}
       <span class="fab-label">Call Levinah</span>
       <span class="fab-icon fab-call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.1 15.1 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg></span>
     </a>
-    <a class="fab-tool" href="https://www.tiktok.com/@levinahsalonandmakeup" target="_blank" rel="noopener" aria-label="Levinah on TikTok">
+    <a class="fab-tool" href="https://www.tiktok.com/@levinahsalon" target="_blank" rel="noopener" aria-label="Levinah on TikTok">
       <span class="fab-label">TikTok</span>
       <span class="fab-icon fab-tiktok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v10.4a4.4 4.4 0 11-3.2-4.23v2.33a2.2 2.2 0 102 2.19V3h1.2c.34 1.94 1.5 3.33 3.8 3.92v2.2A7.2 7.2 0 0114 7.64V3z"/></svg></span>
     </a>
-    <a class="fab-tool" href="https://youtu.be/7Uju-QWrdxw?si=QoalGsPqpky3_m9y" target="_blank" rel="noopener" aria-label="Watch Levinah on YouTube">
+    
+    <a class="fab-tool" href="mailto:levinahunisexsalon@gmail.com" aria-label="Email Levinah">
+      <span class="fab-label">Email</span>
+      <span class="fab-icon fab-call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg></span>
+    </a>
+<a class="fab-tool" href="https://youtube.com/@levinahunisexsalon-u6n?si=2y6HuvCfl8zTKpEK" target="_blank" rel="noopener" aria-label="Watch Levinah on YouTube">
       <span class="fab-label">YouTube</span>
       <span class="fab-icon fab-youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></span>
     </a>
@@ -1173,8 +1191,8 @@ var SERVICES=[
 {cat:"ladies-hair",name:"Dreadlocks Retouch",includes:"Retightening and styling",price:"50,000 – 150,000"},
 {cat:"ladies-hair",name:"Dreadlocks Styling",includes:"Styling only",price:"30,000 – 80,000"},
 {cat:"ladies-hair",name:"Hair Coloring",includes:"Depending on color used",price:"50,000 – 150,000"},
-{cat:"ladies-hair",name:"Hair Relaxing (Motiv & Radiant)",includes:"Relaxing and setting",price:"40,000"},
-{cat:"ladies-hair",name:"Hair Relaxing (Mad, TCB, MM, Adult & Baby Kits)",includes:"Relaxing and setting",price:"50,000 – 85,000"},
+{cat:"ladies-hair",name:"Hair Relaxing – Adults",includes:"Movit, Miad, Mega Growth, Olive, Dark & Lovely",price:"40,000 – 85,000"},
+{cat:"ladies-hair",name:"Hair Relaxing – Baby Kits",includes:"Baby kits",price:"50,000 – 85,000"},
 {cat:"ladies-hair",name:"Retouch with Hair Gel Styling",includes:"Retouch and gel styling",price:"70,000"},
 {cat:"ladies-hair",name:"Retouch with Hair Gel Styling & Extensions",includes:"Retouch, extensions and styling",price:"80,000 – 120,000"},
 {cat:"makeup",name:"Simple Makeup",includes:"Powdered touch",price:"20,000"},
@@ -1213,8 +1231,8 @@ var SERVICES=[
 {cat:"beauty",name:"Eyelash Installation (Strip Lashes)",includes:"Strip lashes included",price:"20,000"},
 {cat:"beauty",name:"Eyelash Installation (Isolated Lashes)",includes:"Individual lash extensions",price:"30,000 – 150,000"},
 {cat:"beauty",name:"Facial Treatment",includes:"Cleansing and treatment",price:"50,000 – 150,000"},
-{cat:"beauty",name:"Face Scrub",includes:"Deep cleaning",price:"30,000"},
-{cat:"beauty",name:"Face Steaming",includes:"Skin preparation",price:"20,000"}
+{cat:"beauty",name:"Facial Scrub",includes:"Deep facial cleansing and exfoliation",price:"30,000"},
+{cat:"beauty",name:"Face Steaming",includes:"Facial steaming and skin preparation",price:"20,000"}
 ];
 
 var ADDITIONAL_SERVICES=["Bridal Wear Hiring","Cosmetics Sales","Jewelry & Fashion Accessories","Professional Ushering Services","Event Beauty Consultation","Braids & Wigs"];
