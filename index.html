@@ -384,6 +384,79 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
   .service-gallery-track .gallery-item{transition:none}
 }
 
+
+/* v26: centered showcase carousel */
+.service-gallery-wrap{
+  position:relative;
+  overflow:hidden;
+}
+
+/* keep edge hints outside the main card area */
+.service-gallery-wrap::before,
+.service-gallery-wrap::after{
+  width:22px;
+  opacity:.65;
+}
+.service-gallery-wrap::before{
+  background:linear-gradient(90deg,rgba(255,250,248,.94) 0%,rgba(255,250,248,0) 100%);
+}
+.service-gallery-wrap::after{
+  background:linear-gradient(270deg,rgba(255,250,248,.94) 0%,rgba(255,250,248,0) 100%);
+}
+
+.service-gallery-track{
+  grid-auto-columns:min(560px,72vw);
+  gap:18px;
+  padding-inline:14vw;
+  scroll-padding-inline:14vw;
+  scroll-snap-type:x mandatory;
+  align-items:center;
+}
+
+.service-gallery-track .gallery-item{
+  scroll-snap-align:center;
+  transform:scale(.94);
+  opacity:.9;
+  transition:
+    transform .5s cubic-bezier(.22,.61,.36,1),
+    opacity .5s ease,
+    filter .5s ease;
+}
+
+.service-gallery-track .gallery-item.is-active{
+  transform:scale(1);
+  opacity:1;
+  filter:none;
+  z-index:2;
+}
+
+.service-gallery-track .gallery-item.is-near-edge{
+  opacity:.72;
+  filter:none;
+}
+
+@media(max-width:760px){
+  .service-gallery-track{
+    grid-auto-columns:76vw;
+    gap:14px;
+    padding-inline:12vw;
+    scroll-padding-inline:12vw;
+  }
+  .service-gallery-wrap::before,
+  .service-gallery-wrap::after{
+    width:14px;
+    opacity:.5;
+  }
+}
+
+@media(max-width:420px){
+  .service-gallery-track{
+    grid-auto-columns:78vw;
+    padding-inline:11vw;
+    scroll-padding-inline:11vw;
+  }
+}
+
 /* gallery lightbox */
 .gallery-item{cursor:zoom-in}
 .gallery-lightbox{
@@ -1700,9 +1773,9 @@ galleryLightbox.addEventListener("touchend",function(e){
       const cardCenter = box.left + box.width / 2;
       const distance = Math.abs(cardCenter - center);
 
-      card.classList.toggle('is-active', distance < box.width * .36);
+      card.classList.toggle('is-active', distance < box.width * .28);
       card.classList.toggle('is-near-edge',
-        box.left < trackBox.left + 58 || box.right > trackBox.right - 58
+        box.left < trackBox.left + 18 || box.right > trackBox.right - 18
       );
     });
   }
@@ -1711,8 +1784,13 @@ galleryLightbox.addEventListener("touchend",function(e){
     index = (nextIndex + cards.length) % cards.length;
     const card = cards[index];
 
+    const targetLeft =
+      card.offsetLeft
+      - (track.clientWidth / 2)
+      + (card.offsetWidth / 2);
+
     track.scrollTo({
-      left: card.offsetLeft - track.offsetLeft,
+      left: targetLeft,
       behavior: reduceMotion ? 'auto' : 'smooth'
     });
 
