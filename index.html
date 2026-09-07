@@ -54,10 +54,9 @@
     "https://www.levinahsalons.com/assets/images/salon-reception.jpg",
     "https://www.levinahsalons.com/assets/images/salon-interior.jpg"
   ],
-  "description": "Unisex salon and makeup studio in Bunamwaya offering hair styling, braiding, makeup, bridal beauty, nails, barbering, kids services, facial care, event styling & photoshoots and professional beauty training.",
+  "description": "Unisex salon, makeup studio and beauty-products supplier in Bunamwaya offering hair styling, braiding, makeup, bridal beauty, nails, barbering, kids services, facial care, event styling, professional beauty training and wholesale and retail beauty essentials.",
   "telephone": "+256787444791",
   "email": "levinahunisexsalon@gmail.com",
-  "priceRange": "UGX",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Harambe Plaza, 1st Floor, Bunamwaya Town, opposite God's Grace Plaza",
@@ -433,13 +432,13 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 .beauty-store-content{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);gap:36px;align-items:center;padding:34px 40px 38px}
 .beauty-store-content h2{font-size:clamp(34px,4.7vw,54px)}
 .beauty-store-content p:not(.eyebrow){color:var(--muted);font-size:16px;margin:14px 0 0;max-width:760px}
-.beauty-store-actions{display:flex;justify-content:flex-end}
+.beauty-store-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:9px}.beauty-store-actions .btn{min-height:40px;padding:10px 16px;font-size:13px}
 @media(max-width:760px){
   #beauty-accessories{padding:58px 0}
   .beauty-store-feature{border-radius:20px}
   .beauty-store-content{grid-template-columns:1fr;gap:22px;padding:27px 22px 30px}
   .beauty-store-actions{justify-content:flex-start}
-  .beauty-store-actions .btn{width:100%;white-space:normal;text-align:center}
+  .beauty-store-actions .btn{width:auto;min-width:0;white-space:normal;text-align:center}
 }
 
 /* gallery */
@@ -1277,7 +1276,7 @@ body.modal-open{overflow:hidden}
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#training">Training</a><a href="#hospitality">Bridal &amp; Hospitality</a><a href="#contact">Contact</a>
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="products.html">Beauty Shop</a><a href="#gallery">Gallery</a><a href="#training">Training</a><a href="#hospitality">Bridal &amp; Hospitality</a><a href="#contact">Contact</a>
       <button class="btn btn-whatsapp btn-sm open-booking" type="button">Book Now</button>
     </div>
   </nav>
@@ -1294,14 +1293,14 @@ body.modal-open{overflow:hidden}
       <ul class="hero-pills"><li>Beauty</li><li>Hair</li><li>Makeup</li><li>Nails</li><li>Barbering</li></ul>
       <div class="hero-actions">
         <button class="btn btn-whatsapp open-booking" type="button">Book Now</button>
-        <a class="btn btn-outline" href="#services">View Services &amp; Prices</a>
+        <a class="btn btn-outline" href="#services">View Services</a>
       </div>
     </div>
     <div class="logo-panel"><img src="assets/images/levinah_unisex_logo.png" alt="Levinah logo"></div>
   </div>
 </section>
 
-<section id="highlights"><div class="highlights-grid"><div>Affordable Prices</div><div>Customer Satisfaction</div><div>Professional Experts</div><div>Quality Products</div><div>Clean &amp; Relaxing Environment</div></div></section>
+<section id="highlights"><div class="highlights-grid"><div>Value-focused care</div><div>Customer Satisfaction</div><div>Professional Experts</div><div>Quality Products</div><div>Clean &amp; Relaxing Environment</div></div></section>
 
 <section id="about">
   <div class="wrap about-grid">
@@ -1309,7 +1308,7 @@ body.modal-open{overflow:hidden}
       <p class="eyebrow">About Levinah</p>
       <h2>A unisex studio built on care and craft</h2>
       <p>Levinah Unisex Salon &amp; Makeup Studio is a full-service beauty destination in Bunamwaya, Sseguku, Wakiso District, welcoming women, men and kids for hair, makeup, nails, barbering and bridal styling.</p>
-      <p>Every service is delivered by professional experts using quality products in a clean, relaxing environment — and every price is built to stay affordable without cutting corners.</p>
+      <p>Every service is delivered by professional experts using quality products in a clean, relaxing environment. Message us to confirm current service details and availability.</p>
       <p>Beyond the chair, Levinah also offers professional training and has incorporated bridal, event and hospitality services into the wider Levinah experience.</p>
       <div class="hero-actions"><a href="#services" class="btn btn-primary">Explore Services</a><a href="#training" class="btn btn-outline">Training Programs</a></div>
     </div>
@@ -1361,8 +1360,8 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Service Menu</p>
-      <h2>Services &amp; Prices</h2>
-      <p>Explore our eight service categories, then open any category to see the available services and prices.</p>
+      <h2>Salon Services</h2>
+      <p>Explore our service categories, then enquire about the service that suits you. We will confirm current pricing and availability directly.</p>
     </div>
 
     <div class="service-showcase reveal">
@@ -1381,7 +1380,7 @@ body.modal-open{overflow:hidden}
 
     <div id="additionalWrap" style="display:none;">
       <h3 style="margin-top:44px;font-size:24px;">Additional Services</h3>
-      <p style="color:var(--muted);margin:8px 0 0;">Priced individually — message us on WhatsApp for a quote.</p>
+      <p style="color:var(--muted);margin:8px 0 0;">Message us on WhatsApp for current details.</p>
       <ul class="additional-list" id="additionalList"></ul>
     </div>
   </div>
@@ -1396,11 +1395,12 @@ body.modal-open{overflow:hidden}
       <div class="beauty-store-content">
         <div>
           <p class="eyebrow">Retail &amp; Wholesale</p>
-          <h2 id="beauty-accessories-title">Beauty &amp; Accessories</h2>
-          <p>Shop beauty essentials, hair products, wigs, weaves, cosmetics, personal care products and accessories for both retail and wholesale customers. Visit Levinah for quality beauty products in Bunamwaya and beauty accessories convenient to Kampala.</p>
+          <h2 id="beauty-accessories-title">Levinah Beauty Shop &amp; Salon</h2>
+          <p>Levinah now supplies beauty products, salon supplies, hair products, braids, extensions and makeup accessories for salon operators and individual customers. Wholesale and retail orders are available, with delivery options.</p>
         </div>
         <div class="beauty-store-actions">
-          <a class="btn btn-primary" href="#beauty-store">Visit Our Beauty Store</a>
+          <a class="btn btn-primary" href="products.html">Explore Beauty Shop</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/256703878921?text=Hi%20Levinah%20Beauty%20Shop%2C%20I%27d%20like%20to%20place%20an%20order%20or%20ask%20about%20your%20beauty%20and%20salon%20products." target="_blank" rel="noopener">Order via WhatsApp</a>
         </div>
       </div>
     </article>
@@ -1575,7 +1575,7 @@ body.modal-open{overflow:hidden}
           <li><span class="icon">WA</span><div><strong>WhatsApp</strong><span>0703 878 921</span></div></li>
           <li><span class="icon">☎</span><div><strong>Call</strong><span>0787 444 791</span></div></li>
           <li><span class="icon">✉</span><div><strong>Email</strong><span><a href="mailto:levinahunisexsalon@gmail.com" style="text-decoration:none">levinahunisexsalon@gmail.com</a></span></div></li>
-          <li><span class="icon">UGX</span><div><strong>Payment</strong><span>Cash, Mobile Money, Bank Transfers</span></div></li>
+          <li><span class="icon">✓</span><div><strong>Payment</strong><span>Cash, Mobile Money, Bank Transfers</span></div></li>
         </ul>
         <div class="hero-actions">
           <button class="btn btn-whatsapp open-booking" type="button">Book Now</button>
@@ -1621,7 +1621,7 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="footer-grid">
       <div><div class="footer-brand"><img src="assets/images/levinah_unisex_logo.png" alt="Levinah logo"><strong>Levinah Unisex Salon &amp; Makeup Studio</strong></div><p style="font-size:14px;max-width:340px;">Your Beauty is Our Priority. Beauty, hair, makeup, nails and barbering at Harambe Plaza, 1st Floor, Bunamwaya Town — opposite God&#39;s Grace Plaza.</p></div>
-      <div><h5>Quick Links</h5><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#training">Training</a></li><li><a href="#hospitality">Bridal &amp; Hospitality</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Quick Links</h5><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="products.html">Beauty Shop</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#training">Training</a></li><li><a href="#hospitality">Bridal &amp; Hospitality</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h5>Contact &amp; Socials</h5><ul>
         <li>Harambe Plaza, 1st Floor, Bunamwaya Town</li>
         <li>Opposite God&#39;s Grace Plaza</li>
@@ -1722,77 +1722,14 @@ var CATEGORIES=[
 ];
 
 var SERVICES=[
-{cat:"ladies-hair",name:"Hair Wash",includes:"Shampoo and conditioning",price:"10,000 – 20,000"},
-{cat:"ladies-hair",name:"Hair Leave-In Treatment",includes:"Nourishing treatment",price:"20,000 – 30,000"},
-{cat:"ladies-hair",name:"Wash & Blow Dry",includes:"Washing, conditioning, blow drying, hot combing",price:"20,000 – 50,000"},
-{cat:"ladies-hair",name:"Hair Ironing",includes:"Straightening only",price:"15,000"},
-{cat:"ladies-hair",name:"Hair Straightening & Toning",includes:"Straightening and toning (natural hair and wigs)",price:"20,000 – 50,000"},
-{cat:"ladies-hair",name:"Hair Steaming & Treatment",includes:"Hair treatment and steaming",price:"20,000 – 55,000"},
-{cat:"ladies-hair",name:"Natural Hair Styling (Without Wash)",includes:"Styling of natural hair",price:"15,000 – 50,000"},
-{cat:"ladies-hair",name:"Natural Hair Styling (With Wash)",includes:"Washing and styling",price:"30,000 – 70,000"},
-{cat:"ladies-hair",name:"Cornrows",includes:"Simple lines/cornrows",price:"20,000 – 40,000"},
-{cat:"ladies-hair",name:"Adults Plaiting Only",includes:"Natural hair plaiting",price:"50,000 – 80,000"},
-{cat:"ladies-hair",name:"Kids Plaiting Only",includes:"Natural hair plaiting",price:"20,000 – 55,000"},
-{cat:"ladies-hair",name:"Pencil Plaiting",includes:"Small individual plaits",price:"50,000 – 100,000"},
-{cat:"ladies-hair",name:"Invisible Braids",includes:"Medium-sized invisible braids",price:"80,000 – 150,000"},
-{cat:"ladies-hair",name:"Box Braids",includes:"Plaiting with braids",price:"100,000 – 180,000"},
-{cat:"ladies-hair",name:"Knotless Braids",includes:"Plaiting with braids",price:"120,000 – 250,000"},
-{cat:"ladies-hair",name:"Passion Twists",includes:"Plaiting with braids",price:"120,000 – 250,000"},
-{cat:"ladies-hair",name:"Senegalese Twists",includes:"Plaiting with braids",price:"100,000 – 200,000"},
-{cat:"ladies-hair",name:"Stitch Braids",includes:"Neat stitch line braiding",price:"50,000 – 120,000"},
-{cat:"ladies-hair",name:"Fulani Braids",includes:"Full Fulani styling",price:"80,000 – 180,000"},
-{cat:"ladies-hair",name:"Tribal Braids",includes:"Full tribal styling",price:"100,000 – 250,000"},
-{cat:"ladies-hair",name:"Weave Plaiting",includes:"Foundation plaiting for weave",price:"30,000 – 70,000"},
-{cat:"ladies-hair",name:"Weaving",includes:"Basic weave installation",price:"80,000 – 150,000"},
-{cat:"ladies-hair",name:"Wig Installation Only",includes:"Wig fitting only",price:"30,000"},
-{cat:"ladies-hair",name:"Wig Installation & Styling",includes:"Wig fitting and styling",price:"50,000 – 80,000"},
-{cat:"ladies-hair",name:"Wig Revamp",includes:"Wash, treatment and styling",price:"50,000"},
-{cat:"ladies-hair",name:"Dreadlocks Retouch",includes:"Retightening and styling",price:"50,000 – 150,000"},
-{cat:"ladies-hair",name:"Dreadlocks Styling",includes:"Styling only",price:"30,000 – 80,000"},
-{cat:"ladies-hair",name:"Hair Coloring",includes:"Depending on color used",price:"50,000 – 150,000"},
-{cat:"ladies-hair",name:"Hair Relaxing – Adults",includes:"Movit, Miad, Mega Growth, Olive, Dark & Lovely",price:"40,000 – 85,000"},
-{cat:"ladies-hair",name:"Hair Relaxing – Baby Kits",includes:"Baby kits",price:"50,000 – 85,000"},
-{cat:"ladies-hair",name:"Retouch with Hair Gel Styling",includes:"Retouch and gel styling",price:"70,000"},
-{cat:"ladies-hair",name:"Retouch with Hair Gel Styling & Extensions",includes:"Retouch, extensions and styling",price:"80,000 – 120,000"},
-{cat:"makeup",name:"Simple Makeup",includes:"Powdered touch",price:"20,000"},
-{cat:"makeup",name:"Soft Glam Makeup",includes:"Enhanced makeup look",price:"30,000 – 50,000"},
-{cat:"makeup",name:"Full Glam Makeup",includes:"Full event makeup",price:"80,000"},
-{cat:"makeup",name:"Graduation Makeup",includes:"Makeup and lashes",price:"70,000"},
-{cat:"makeup",name:"Photoshoot Makeup",includes:"Professional finish",price:"100,000"},
-{cat:"makeup",name:"Introduction Makeup",includes:"Traditional ceremony look",price:"150,000"},
-{cat:"makeup",name:"Bridal Makeup",includes:"Full bridal package",price:"300,000 – 600,000"},
-{cat:"bridal",name:"Simple Bridal Package",includes:"Hair + Makeup",price:"300,000"},
-{cat:"bridal",name:"Premium Bridal Package",includes:"Hair + Makeup + Veiling",price:"500,000"},
-{cat:"bridal",name:"Bridesmaids Makeup",includes:"Per person",price:"100,000"},
-{cat:"bridal",name:"Flower Girl Styling",includes:"Hair and light makeup",price:"50,000"},
-{cat:"bridal",name:"Head Wrap Styling",includes:"Professional gele/head wrap",price:"50,000"},
-{cat:"nails",name:"Manicure",includes:"Nail cleaning and shaping",price:"10,000 – 20,000"},
-{cat:"nails",name:"Pedicure",includes:"Foot care treatment",price:"30,000 – 50,000"},
-{cat:"nails",name:"Gel Polish",includes:"Application only (natural nails)",price:"30,000"},
-{cat:"nails",name:"Gel Extensions",includes:"Full set",price:"60,000 – 120,000"},
-{cat:"nails",name:"Nail Art",includes:"Per design complexity",price:"10,000 – 30,000"},
-{cat:"barber",name:"Forehead, Beards Only",includes:"Forehead, beards only",price:"5,000"},
-{cat:"barber",name:"Forehead, Beard Treatment or Hair Brush Cut Only",includes:"No facial scrub",price:"7,000 – 10,000"},
-{cat:"barber",name:"Haircut",includes:"Standard haircut with facial scrub",price:"10,000"},
-{cat:"barber",name:"Haircut + Beard",includes:"Haircut and beard shaping plus black shampoo",price:"15,000"},
-{cat:"barber",name:"Skin Fade",includes:"Premium fade cut, black shampoo or powdered topik inclusive",price:"20,000"},
-{cat:"barber",name:"Hair Design",includes:"Artistic lines/designs, black shampoo or powdered topik inclusive",price:"25,000"},
-{cat:"barber",name:"Hair Coloring",includes:"Color application",price:"30,000 – 80,000"},
-{cat:"barber",name:"Hair Bleaching",includes:"Bleach application",price:"50,000"},
-{cat:"kids",name:"Kids Haircut",includes:"Ages 2–12 years",price:"5,000 – 10,000"},
-{cat:"kids",name:"Kids Cornrows",includes:"Simple styling",price:"10,000 – 20,000"},
-{cat:"kids",name:"Kids Pencil Plaiting",includes:"Small individual plaits",price:"20,000 – 50,000"},
-{cat:"kids",name:"Kids Braiding",includes:"Full braiding styles",price:"30,000 – 80,000"},
-{cat:"kids",name:"Kids Natural Hair Styling",includes:"Styling only",price:"15,000 – 30,000"},
-{cat:"kids",name:"Flower Girl Hairstyling",includes:"Event styling",price:"30,000"},
-{cat:"kids",name:"Kids Event Makeup",includes:"Light makeup",price:"20,000"},
-{cat:"beauty",name:"Eyebrow Shaping",includes:"Trimming and shaping",price:"10,000"},
-{cat:"beauty",name:"Eyelash Installation (Strip Lashes)",includes:"Strip lashes included",price:"20,000"},
-{cat:"beauty",name:"Eyelash Installation (Isolated Lashes)",includes:"Individual lash extensions",price:"30,000 – 150,000"},
-{cat:"beauty",name:"Facial Treatment",includes:"Cleansing and treatment",price:"50,000 – 150,000"},
-{cat:"beauty",name:"Facial Scrub",includes:"Deep facial cleansing and exfoliation",price:"30,000"},
-{cat:"beauty",name:"Face Steaming",includes:"Facial steaming and skin preparation",price:"20,000"},
-{cat:"event-glam",name:"Event Glam & Photoshoot Package",includes:"Attire / event dress, professional makeup, headwrap styling and photoshoot",price:"200,000 – 500,000"}
+{cat:"ladies-hair",name:"Hair Wash"},{cat:"ladies-hair",name:"Hair Leave-In Treatment"},{cat:"ladies-hair",name:"Wash & Blow Dry"},{cat:"ladies-hair",name:"Hair Ironing"},{cat:"ladies-hair",name:"Hair Straightening & Toning"},{cat:"ladies-hair",name:"Hair Steaming & Treatment"},{cat:"ladies-hair",name:"Natural Hair Styling (Without Wash)"},{cat:"ladies-hair",name:"Natural Hair Styling (With Wash)"},{cat:"ladies-hair",name:"Cornrows"},{cat:"ladies-hair",name:"Adults Plaiting Only"},{cat:"ladies-hair",name:"Kids Plaiting Only"},{cat:"ladies-hair",name:"Pencil Plaiting"},{cat:"ladies-hair",name:"Invisible Braids"},{cat:"ladies-hair",name:"Box Braids"},{cat:"ladies-hair",name:"Knotless Braids"},{cat:"ladies-hair",name:"Passion Twists"},{cat:"ladies-hair",name:"Senegalese Twists"},{cat:"ladies-hair",name:"Stitch Braids"},{cat:"ladies-hair",name:"Fulani Braids"},{cat:"ladies-hair",name:"Tribal Braids"},{cat:"ladies-hair",name:"Weave Plaiting"},{cat:"ladies-hair",name:"Weaving"},{cat:"ladies-hair",name:"Wig Installation Only"},{cat:"ladies-hair",name:"Wig Installation & Styling"},{cat:"ladies-hair",name:"Wig Revamp"},{cat:"ladies-hair",name:"Dreadlocks Retouch"},{cat:"ladies-hair",name:"Dreadlocks Styling"},{cat:"ladies-hair",name:"Hair Coloring"},{cat:"ladies-hair",name:"Hair Relaxing – Adults"},{cat:"ladies-hair",name:"Hair Relaxing – Baby Kits"},{cat:"ladies-hair",name:"Retouch with Hair Gel Styling"},{cat:"ladies-hair",name:"Retouch with Hair Gel Styling & Extensions"},
+{cat:"makeup",name:"Simple Makeup"},{cat:"makeup",name:"Soft Glam Makeup"},{cat:"makeup",name:"Full Glam Makeup"},{cat:"makeup",name:"Graduation Makeup"},{cat:"makeup",name:"Photoshoot Makeup"},{cat:"makeup",name:"Introduction Makeup"},{cat:"makeup",name:"Bridal Makeup"},
+{cat:"bridal",name:"Simple Bridal Package"},{cat:"bridal",name:"Premium Bridal Package"},{cat:"bridal",name:"Bridesmaids Makeup"},{cat:"bridal",name:"Flower Girl Styling"},{cat:"bridal",name:"Head Wrap Styling"},
+{cat:"nails",name:"Manicure"},{cat:"nails",name:"Pedicure"},{cat:"nails",name:"Gel Polish"},{cat:"nails",name:"Gel Extensions"},{cat:"nails",name:"Nail Art"},
+{cat:"barber",name:"Forehead, Beards Only"},{cat:"barber",name:"Forehead, Beard Treatment or Hair Brush Cut Only"},{cat:"barber",name:"Haircut"},{cat:"barber",name:"Haircut + Beard"},{cat:"barber",name:"Skin Fade"},{cat:"barber",name:"Hair Design"},{cat:"barber",name:"Hair Coloring"},{cat:"barber",name:"Hair Bleaching"},
+{cat:"kids",name:"Kids Haircut"},{cat:"kids",name:"Kids Cornrows"},{cat:"kids",name:"Kids Pencil Plaiting"},{cat:"kids",name:"Kids Braiding"},{cat:"kids",name:"Kids Natural Hair Styling"},{cat:"kids",name:"Flower Girl Hairstyling"},{cat:"kids",name:"Kids Event Makeup"},
+{cat:"beauty",name:"Eyebrow Shaping"},{cat:"beauty",name:"Eyelash Installation (Strip Lashes)"},{cat:"beauty",name:"Eyelash Installation (Isolated Lashes)"},{cat:"beauty",name:"Facial Treatment"},{cat:"beauty",name:"Facial Scrub"},{cat:"beauty",name:"Face Steaming"},
+{cat:"event-glam",name:"Event Glam & Photoshoot Package"}
 ];
 
 var ADDITIONAL_SERVICES=["Bridal Wear Hiring","Cosmetics Sales","Jewelry & Fashion Accessories","Professional Ushering Services","Event Beauty Consultation","Braids & Wigs"];
@@ -1814,7 +1751,7 @@ function renderServices(){
   additionalWrap.style.display="none";
   SERVICES.filter(function(s){return s.cat===activeCat}).forEach(function(s){
     var card=document.createElement("article");card.className="service-card";
-    card.innerHTML='<h4>'+s.name+'</h4><p>'+s.includes+'</p><div class="service-price">'+s.price+'<span>UGX</span></div><button class="btn btn-primary btn-sm service-book" type="button" data-service="'+s.name.replace(/"/g,"&quot;")+'">Book Service</button>';
+    card.innerHTML='<h4>'+s.name+'</h4><p>Contact us for current pricing and availability.</p><button class="btn btn-primary btn-sm service-book" type="button" data-service="'+s.name.replace(/"/g,"&quot;")+'">Enquire</button>';
     serviceGrid.appendChild(card)
   })
 }
@@ -1841,7 +1778,7 @@ CATEGORIES.forEach(function(cat){
   SERVICES.filter(function(s){return s.cat===cat.id}).forEach(function(s){
     var option=document.createElement("option");
     option.value=s.name;
-    option.textContent=s.name+" — UGX "+s.price;
+    option.textContent=s.name;
     group.appendChild(option);
   });
   bookingService.appendChild(group);
@@ -1893,16 +1830,14 @@ bookingForm.addEventListener("submit",function(e){
   var service=bookingService.value;
   var note=document.getElementById("bookingNote").value.trim();
   if(!name||!phone||!service)return;
-  var selected=SERVICES.find(function(s){return s.name===service});
   var enquiryOnly=["Professional Training","Bridal & Wedding Support","Catering Services","Social Lunches & Dinner Receptions","Transportation Services","Wedding & Honeymoon Packages"].indexOf(service)!==-1;
-  var price=selected?selected.price:(enquiryOnly?"Contact Levinah for details":"Please confirm");
   var message="Hi Levinah! I'd like to make a booking request.\n\n"+
     "Name: "+name+"\n"+
     "Phone: "+phone+"\n"+
     "Service: "+service+"\n"+
-    (enquiryOnly?"Details: "+price:"Listed price: UGX "+price)+
+    (enquiryOnly?"Details: Please share more about this enquiry.":"Please confirm the current price and available times.")+
     (note?"\nNote: "+note:"")+
-    "\n\nPlease let me know the available times.";
+    (enquiryOnly?"":"");
   window.open(waLink(message),"_blank","noopener");
   closeBooking();
 });
