@@ -420,7 +420,7 @@ h1,h2,h3,h4{font-family:var(--display);margin:0;color:var(--wine);line-height:1.
 
 /* services */
 #services{background:#fff}.cat-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 28px}.cat-tab{border:1.5px solid var(--line);background:#fff;color:var(--wine);border-radius:999px;padding:10px 17px;font-weight:800;font-size:13px;cursor:pointer;transition:.2s}.cat-tab.active,.cat-tab:hover{background:var(--berry);border-color:var(--berry);color:#fff}
-.service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:15px}.service-card{background:var(--blush-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:19px;display:flex;flex-direction:column;gap:9px;transition:.22s}.service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--berry)}.service-card h4{font-size:17px}.service-card p{margin:0;color:var(--muted);font-size:13.5px;flex:1}.service-price{font-family:var(--display);font-weight:800;color:var(--berry);font-size:15.5px}.service-price span{font-family:var(--body);font-size:10px;color:var(--muted);margin-left:4px}.service-card .btn{align-self:flex-start}
+.service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:15px}.service-card{background:var(--blush-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:19px;display:flex;flex-direction:column;gap:9px;transition:.22s}.service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--berry)}.service-card h4{font-size:17px}.service-card p{margin:0;color:var(--muted);font-size:13.5px;flex:1}.service-card .service-description{font-weight:400;flex:none;margin-top:-2px;margin-bottom:2px}.service-price{font-family:var(--display);font-weight:800;color:var(--berry);font-size:15.5px}.service-price span{font-family:var(--body);font-size:10px;color:var(--muted);margin-left:4px}.service-card .btn{align-self:flex-start}
 .additional-list{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}.additional-list li{background:var(--blush-soft);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;font-weight:700;font-size:14px;color:var(--wine)}.additional-list li:before{content:"✦";color:var(--gold);margin-right:8px}
 
 /* beauty and accessories */
@@ -1732,6 +1732,18 @@ var SERVICES=[
 {cat:"event-glam",name:"Event Glam & Photoshoot Package",price:"Enquire for pricing"}
 ];
 
+var SERVICE_DESCRIPTIONS=[
+"Shampoo and conditioning","Nourishing treatment","Washing, conditioning, blow drying, hot combing","Straightening only","Straightening and toning (natural hair and wigs)","Hair treatment and steaming","Styling of natural hair","Washing and styling","Simple lines/cornrows","Natural hair plaiting","Natural hair plaiting","Small individual plaits","Medium-sized invisible braids","Plaiting with braids","Plaiting with braids","Plaiting with braids","Plaiting with braids","Neat stitch line braiding","Full Fulani styling","Full tribal styling","Foundation plaiting for weave","Basic weave installation","Wig fitting only","Wig fitting and styling","Wash, treatment and styling","Retightening and styling","Styling only","Depending on color used","Relaxing and setting","Relaxing and setting","Retouch and gel styling","Retouch, extensions and styling",
+"Powdered touch","Enhanced makeup look","Full event makeup","Makeup and lashes","Professional finish","Traditional ceremony look","Full bridal package",
+"Hair + Makeup","Hair + Makeup + Veiling","Per person","Hair and light makeup","Professional gele/head wrap",
+"Nail cleaning and shaping","Foot care treatment","Application only (natural nails)","Full set","Per design complexity",
+"Forehead, beards only","No facial scrub","Standard haircut with facial scrub","Haircut and beard shaping plus black shampoo","Premium fade cut, black shampoo or powdered topik inclusive","Artistic lines/designs, black shampoo or powdered topik inclusive","Color application","Bleach application",
+"Ages 2–12 years","Simple styling","Small individual plaits","Full braiding styles","Styling only","Event styling","Light makeup",
+"Trimming and shaping","Strip lashes included","Individual lash extensions","Cleansing and treatment","Deep cleaning","Skin preparation",
+"Event attire, makeup, headwrap styling and photoshoot support"
+];
+SERVICES.forEach(function(service,index){service.description=SERVICE_DESCRIPTIONS[index]});
+
 var ADDITIONAL_SERVICES=["Bridal Wear Hiring","Cosmetics Sales","Jewelry & Fashion Accessories","Professional Ushering Services","Event Beauty Consultation","Braids & Wigs"];
 var TRAINING_PROGRAMS=["Makeup","Hairdressing","Facial and Massage","Hair Cutting","Pedicure & Manicure","Haircutting and Wigs","Bridal Wears / Hiring","Cosmetics","Jewelry","Ushering Services","Computer Literacy"];
 
@@ -1751,7 +1763,7 @@ function renderServices(){
   additionalWrap.style.display="none";
   SERVICES.filter(function(s){return s.cat===activeCat}).forEach(function(s){
     var card=document.createElement("article");card.className="service-card";
-    card.innerHTML='<h4>'+s.name+'</h4><p class="service-price">'+s.price+'</p><button class="btn btn-primary btn-sm service-book" type="button" data-service="'+s.name.replace(/"/g,"&quot;")+'">Enquire</button>';
+    card.innerHTML='<h4>'+s.name+'</h4><p class="service-description">'+s.description+'</p><p class="service-price">'+s.price+'</p><button class="btn btn-primary btn-sm service-book" type="button" data-service="'+s.name.replace(/"/g,"&quot;")+'">Book Service</button>';
     serviceGrid.appendChild(card)
   })
 }
